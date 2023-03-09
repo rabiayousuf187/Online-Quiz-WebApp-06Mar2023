@@ -1,14 +1,14 @@
 console.log("HTML PAGE");
 import { html_ques } from "./html_ques.js";
+let score = 0;
 
-console.log("HTML questiuons === ",html_ques[0]['opt']);
-console.log("HTML questiuons === ",html_ques[0]['opt'][1]);
+console.log("HTML questiuons === ", html_ques[0]["opt"]);
+console.log("HTML questiuons === ", html_ques[0]["opt"][1]);
 
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
-console.log("QUIZ DATA +++ ",quiz_data);
+console.log("QUIZ DATA +++ ", quiz_data);
 let username = quiz_data.username;
-console.log("QUIZ DATA +++ ",username);
-
+console.log("QUIZ DATA +++ ", username);
 
 let banner_heading = document.getElementById("banner_heading");
 banner_heading.style.fontSize = "40px";
@@ -17,179 +17,358 @@ banner_heading.innerHTML = "HTML Online Quiz";
 let img = document.getElementById("banner_img");
 img.src = "../img/html.png";
 
- 
-html_ques.map((ele,index)=>{
-    console.log("index ===== ", ele, index++);
-    console.log("index ===== ", ele.opt[0]);
-    console.log("index ===== ", ele.opt[1]);
-    console.log("index ===== ", ele.opt[2]);
-    console.log("index ===== ", ele.opt[3]);
+function create_div(ele, id, cls, ele_name) {
+  const element = document.createElement(ele);
+  element.setAttribute("id", id);
+  element.setAttribute("class", cls);
+  // element.setAttribute('type' , typ);
+  element.textContent = ele_name;
+  // element.onclick = () => {
+  //   funct();
+  // };
 
-    
-    let indexCapText = capitalize( convertNumberToEnglish(index) );
-    
-    console.log("indexCapText" , indexCapText);
+  return element;
+}
 
-    let ques_ele = `<div class="accordion-item">
-    <h2 class="accordion-header" id="heading${indexCapText}">
-    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${indexCapText}" aria-expanded="true" aria-controls="collapse${indexCapText}">
-       # ${index} ${ele.ques}
-    </button>
-    </h2>
-    <div id="collapse${indexCapText}" class="accordion-collapse collapse show" aria-labelledby="heading${indexCapText}" data-bs-parent="#accordionExample">
-    <div class="accordion-body">
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="opt" id="exampleRadios2" value="${ele.opt[0]}">
-            <label class="form-check-label" for="opt">${ele.opt[0]}</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="opt" id="exampleRadios2" value="${ele.opt[1]}">
-            <label class="form-check-label" for="opt">${ele.opt[1]}</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="opt" id="exampleRadios2" value="${ele.opt[2]}">
-            <label class="form-check-label" for="opt">${ele.opt[2]}</label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="opt" id="exampleRadios2" value="${ele.opt[3]}">
-            <label class="form-check-label" for="opt">${ele.opt[3]}</label>
-        </div>
-        <div id="liveAlertPlaceholder"></div>
-        <div class="quest-btn-group" id="quest-btn-group"></div>`+ render_btn( ele.id , "Submit" , ele.ans) +`</div>
-    </div>
-    </div>`;
-    
-{/* <button type="button" class="btn btn-primary ques-submit" id="check-btn-${ele.id}"  onclick="()=>{alert('ldlfodkgklg')};">Submit</button> */}
+html_ques.map((ele, index) => {
+  console.log("index ===== ", ele, index++);
+  // console.log("index ===== ", ele.opt[0]);
+  // console.log("index ===== ", ele.opt[1]);
+  // console.log("index ===== ", ele.opt[2]);
+  // console.log("index ===== ", ele.opt[3]);
 
-    // console.log(ques_ele);
-    let ques_div = document.querySelector('#accordionExample');
-    ques_div.insertAdjacentHTML('beforeend', ques_ele);
-} );
+  let indexCapText = capitalize(convertNumberToEnglish(index));
+
+  console.log("indexCapText", indexCapText);
+
+  let ques_div = document.querySelector("#accordionExample");
+  // ques_div.insertAdjacentHTML('beforeend', ques_ele);
+
+  
+
+  let main_div = create_div("div", "", "accordion-item", "", "");
+  console.log("main_div ===== ", main_div);
+
+  let heading = create_div(
+    "h2",
+    `heading${indexCapText}`,
+    "accordion-header",
+    "",
+    "",
+    ""
+  );
+  console.log("heading ===== ", heading, indexCapText);
+
+  let qus_btn = create_div(
+    "button",
+    "",
+    "accordion-button",
+    `# ${index} ${ele.ques}`,
+    ""
+  );
+  qus_btn.setAttribute("type", "button");
+  qus_btn.setAttribute("data-bs-toggle", "collapse");
+  qus_btn.setAttribute("data-bs-target", `#collapse${indexCapText}`);
+  qus_btn.setAttribute("aria-expanded", true);
+  qus_btn.setAttribute("aria-controls", `collapse${indexCapText}`);
+  console.log("qus_btn ===== ", qus_btn);
+
+  let score_text = create_div('span', `score-text-${ele.id}`, 'score-text', `${0}/10`);
+  qus_btn.appendChild(score_text);
+
+  heading.appendChild(qus_btn);
+  main_div.appendChild(heading);
+  ques_div.appendChild(main_div);
+  console.log("ques_div ===== ", ques_div);
+
+  let accordion_collapse_div = create_div(
+    "div",
+    `collapse${indexCapText}`,
+    "accordion-collapse collapse show",
+    "",
+    ""
+  );
+  accordion_collapse_div.setAttribute(
+    "aria-labelledby",
+    `heading${indexCapText}`
+  );
+  accordion_collapse_div.setAttribute("data-bs-parent", "#accordionExample");
+  main_div.appendChild(accordion_collapse_div);
+  console.log("main_div ===== ", main_div);
+
+  let accordion_body_div = create_div("div", `accordion-body-${ele.id}`, "accordion-body", "", "");
+  accordion_collapse_div.appendChild(accordion_body_div);
+
+  // radio button for 1st Option
+  let form_check_div = create_div("div", ``, "form-check", "", "");
+  accordion_body_div.appendChild(form_check_div);
+
+  let form_check_input = create_div(
+    "input",
+    `exampleRadios2`,
+    "form-check-input",
+    "",
+    ""
+  );
+  form_check_input.setAttribute("type", "radio");
+  form_check_input.setAttribute("name", "opt");
+  form_check_input.setAttribute("value", `${ele.opt[0]}`);
+  form_check_div.appendChild(form_check_input);
+
+  let form_check_label = create_div(
+    "label",
+    "",
+    "form-check-label",
+    `${ele.opt[0]}`,
+    ""
+  );
+  form_check_label.setAttribute("for", "opt");
+  form_check_div.appendChild(form_check_label);
+
+  // radio button for 2nd Option
+  form_check_div = create_div("div", ``, "form-check", "", "");
+  accordion_body_div.appendChild(form_check_div);
+
+  form_check_input = create_div(
+    "input",
+    `exampleRadios2`,
+    "form-check-input",
+    "",
+    ""
+  );
+  form_check_input.setAttribute("type", "radio");
+  form_check_input.setAttribute("name", "opt");
+  form_check_input.setAttribute("value", `${ele.opt[1]}`);
+  form_check_div.appendChild(form_check_input);
+
+  form_check_label = create_div(
+    "label",
+    "",
+    "form-check-label",
+    `${ele.opt[1]}`,
+    ""
+  );
+  form_check_label.setAttribute("for", "opt");
+  form_check_div.appendChild(form_check_label);
+
+  // radio button for 3rd Option
+  form_check_div = create_div("div", ``, "form-check", "", "");
+  accordion_body_div.appendChild(form_check_div);
+
+  form_check_input = create_div(
+    "input",
+    `exampleRadios2`,
+    "form-check-input",
+    "",
+    ""
+  );
+  form_check_input.setAttribute("type", "radio");
+  form_check_input.setAttribute("name", "opt");
+  form_check_input.setAttribute("value", `${ele.opt[2]}`);
+  form_check_div.appendChild(form_check_input);
+
+  form_check_label = create_div(
+    "label",
+    "",
+    "form-check-label",
+    `${ele.opt[2]}`,
+    ""
+  );
+  form_check_label.setAttribute("for", "opt");
+  form_check_div.appendChild(form_check_label);
+
+  // radio button for 4th Option
+  form_check_div = create_div("div", ``, "form-check", "", "");
+  accordion_body_div.appendChild(form_check_div);
+
+  form_check_input = create_div(
+    "input",
+    `exampleRadios2`,
+    "form-check-input",
+    "",
+    ""
+  );
+  form_check_input.setAttribute("type", "radio");
+  form_check_input.setAttribute("name", "opt");
+  form_check_input.setAttribute("value", `${ele.opt[3]}`);
+  form_check_div.appendChild(form_check_input);
+
+  form_check_label = create_div(
+    "label",
+    "",
+    "form-check-label",
+    `${ele.opt[3]}`,
+    ""
+  );
+  form_check_label.setAttribute("for", "opt");
+  form_check_div.appendChild(form_check_label);
+
+  let alert_show = create_div(
+    "div",
+    `show_alert-${ele.id}`,
+    '',
+    ''  );
+  accordion_body_div.appendChild(alert_show);
+  
+  qus_btn = create_div(
+    "button",
+    `check-btn-${ele.id}`,
+    "btn btn-success ques-submit",
+    "Submit"
+  );
+  qus_btn.onclick = () => {
+      ques_submit(ele.ans , ele.id)
+    }; 
+     accordion_body_div.appendChild(qus_btn);
+});
 
 // convertNumberToEnglish
 function convertNumberToEnglish(number) {
-    const ones = [
-      "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
-      "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"
-    ];
-    const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-    const scales = ["", "thousand", "million", "billion", "trillion"];
-  
-    if (number === 0) {
-      return "zero";
-    }
-  
-    const sign = number < 0 ? "negative " : "";
-    let englishNumber = "";
-    let scaleIndex = 0;
-  
-    number = Math.abs(number);
-  
-    while (number > 0) {
-      const hundreds = Math.floor(number % 1000 / 100);
-      const onesAndTens = number % 100;
-  
-      if (hundreds !== 0) {
-        englishNumber = ones[hundreds] + " hundred " + englishNumber;
-      }
-  
-      if (onesAndTens < 20) {
-        englishNumber = ones[onesAndTens] + " " + englishNumber;
-      } else {
-        englishNumber = tens[Math.floor(onesAndTens / 10)] + " " + ones[onesAndTens % 10] + " " + englishNumber;
-      }
-  
-      number = Math.floor(number / 1000);
-      scaleIndex++;
-      if (number > 0) {
-        englishNumber = scales[scaleIndex] + " " + englishNumber;
-      }
-    }
-  
-    return sign + englishNumber.trim();
+  const ones = [
+    "",
+    "one",
+    "two",
+    "three",
+    "four",
+    "five",
+    "six",
+    "seven",
+    "eight",
+    "nine",
+    "ten",
+    "eleven",
+    "twelve",
+    "thirteen",
+    "fourteen",
+    "fifteen",
+    "sixteen",
+    "seventeen",
+    "eighteen",
+    "nineteen",
+  ];
+  const tens = [
+    "",
+    "",
+    "twenty",
+    "thirty",
+    "forty",
+    "fifty",
+    "sixty",
+    "seventy",
+    "eighty",
+    "ninety",
+  ];
+  const scales = ["", "thousand", "million", "billion", "trillion"];
+
+  if (number === 0) {
+    return "zero";
   }
+
+  const sign = number < 0 ? "negative " : "";
+  let englishNumber = "";
+  let scaleIndex = 0;
+
+  number = Math.abs(number);
+
+  while (number > 0) {
+    const hundreds = Math.floor((number % 1000) / 100);
+    const onesAndTens = number % 100;
+
+    if (hundreds !== 0) {
+      englishNumber = ones[hundreds] + " hundred " + englishNumber;
+    }
+
+    if (onesAndTens < 20) {
+      englishNumber = ones[onesAndTens] + " " + englishNumber;
+    } else {
+      englishNumber =
+        tens[Math.floor(onesAndTens / 10)] +
+        " " +
+        ones[onesAndTens % 10] +
+        " " +
+        englishNumber;
+    }
+
+    number = Math.floor(number / 1000);
+    scaleIndex++;
+    if (number > 0) {
+      englishNumber = scales[scaleIndex] + " " + englishNumber;
+    }
+  }
+
+  return sign + englishNumber.trim();
+}
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// **************** Submit answer
+function ques_submit(actual_ans, parent_ele) {
+  console.log("actual_ans ====== ", actual_ans);
+  let id = parent_ele;
+  console.log("id ====== ", id);
+  parent_ele = `#show_alert-${parent_ele}`;
+  console.log("parent_ele ====== ", parent_ele);
 
-function render_btn( id , btn_name , actu_ans){
-  console.log("Renduring Button ====== ",id);
+  let sel_ans = document.querySelector('input[name = "opt" ]:checked');
+  console.log("sel_ans", sel_ans);
 
-  // Get a reference to the element where you want to append the new element
-  var parentElement = document.querySelector('#accordionExample');
-  
-  // Create a new HTML element
-  const button = document.createElement('button');
-
-  // Set attributes and content for the new element
-  button.setAttribute('id' , 'check-btn-'+ id);
-  button.setAttribute('type' , 'button');
-  button.setAttribute('class' , 'btn btn-success');
-  button.textContent = btn_name;
-  button.onclick =()=>{ques_submit(actu_ans)};
-  
-  console.log("button ====== ", button)
-  // Append the new element to the parent element
-  parentElement.appendChild(button);
+  if (sel_ans !== null) {
+    // if ( sel_ans === null )
+    sel_ans = sel_ans.getAttribute("value");
+    console.log("sel_ans ----=  value", sel_ans);
+    if (sel_ans == actual_ans) {
+      score +=10;
+      console.log('Correct Answer!', sel_ans);
+      console.log('score ===== !', score);
+      document.getElementById(`score-text-${id}`).innerHTML =  '10/10';
+      console.log('radio disable', document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check'));
+      document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[0].disabled = true;
+      document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[1].disabled = true;
+      document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[2].disabled = true;
+      document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[3].disabled = true;
+      document.getElementById(`accordion-body-${id}`).disabled = true;
+      document.getElementById(`check-btn-${id}`).disabled = true;
+      alert_show('Correct Answer!', 'success', parent_ele);
+      
+    } else {
+      score +=0;
+      console.log('Wrong Answer!', sel_ans);
+      console.log('radio disable', document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check'));
+      document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[0].disabled = true;
+      document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[1].disabled = true;
+      document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[2].disabled = true;
+      document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[3].disabled = true;
+      document.getElementById(`accordion-body-${id}`).disabled = true;
+      document.getElementById(`check-btn-${id}`).disabled = true;
+      alert_show('Wrong Answer!', 'danger', parent_ele);
+    }
+  } else if (sel_ans === null) {
+    console.log("sel_ans", sel_ans);
+    alert_show("Invalid Answer! Please Select atleast One Option","danger", parent_ele, );
+  }
 }
 
-// **************** Submit answer
-function ques_submit(actual_ans){
-  console.log("actual_ans ====== ",actual_ans);
+// ******************** live alert
+function alert_show(message, type, parent_ele) {
+  let alertPlaceholder = document.querySelector(parent_ele);
 
- 
+  // let alert_div = document.createElement("div");
+
+  let alert_display = create_div('div', '', `alert alert-${type} alert-dismissible fade show`, '', '');
+  alert_display.setAttribute('role','alert');
+  alert_display.appendChild( create_div('strong', '', '', message, '') );
+  let button = create_div('button', '', 'btn-close', '', '');
+  button.setAttribute('type','button');
+  button.setAttribute('data-bs-dismiss','alert');
+  button.setAttribute('aria-label','Close');
+  alert_display.appendChild( button);
   
+  console.log(alert_display);
 
-    let msg = document.querySelector('.accordion-body');
-  
-    // let ques_success_alert = `<div class="alert alert-success d-flex align-items-center" role="alert"><svg class="bi flex-shrink-0 me-2" role="img" aria-label="Sluccess:"><use xink:href="#check-circle-fill"/></svg><div>Correct Answer</div></div>`;
-    // let ques_wrong_alert = `<div class="alert alert-danger d-flex align-items-center" role="alert"><svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg><div>Please Select atleast One Option</div></div>`; 
-    
-    let sel_ans = document.querySelector('input[name = "opt" ]:checked' );
-    console.log( "sel_ans" , sel_ans);
-    
-    if ( sel_ans !== null )
-    // if ( sel_ans === null )
-    {
-      sel_ans = sel_ans.getAttribute('value');
-      console.log( "sel_ans ----=  value" , sel_ans);
-        if( sel_ans == actual_ans ){
-          
-          console.log( "correct answer!" , sel_ans);
-          alert_show('Correct Answer!', 'success');
-        }
-        else{
-            console.log( "wrong answer!" , sel_ans);
-            alert_show('Wrong Answer!', 'danger');
-          }
-        }
-    else if( sel_ans === null)
-    {
-      console.log( "sel_ans" , sel_ans);
-      alert_show('Invalid Answer! Please Select atleast One Option', 'danger');
-    }
-   
-  
-  }
-
-
-  // ******************** live alert
-  function alert_show( message , type){
-    let alertPlaceholder = document.getElementById('liveAlertPlaceholder');
-    let alert_div = document.createElement('div');
-    let alert_display = `<div class="alert alert-${type} alert-dismissible fade show" role="alert"><strong>${message}</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
-      alert_div.append(alert_display);
-      console.log(alert_display);
-
-      alertPlaceholder.insertAdjacentHTML('beforeend', alert_display);
-
-  
-  }
-
-  
-
+  alertPlaceholder.appendChild(alert_display);
+}
 
 // // Get a reference to the alert element
 // const myAlert = document.getElementById('liveAlertPlaceholder');

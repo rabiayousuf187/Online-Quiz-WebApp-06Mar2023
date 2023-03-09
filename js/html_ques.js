@@ -11,7 +11,7 @@ const html_ques = [
         "ans" : "All of the above",
     },
     {
-        "id" : "1",
+        "id" : "2",
         "ques" : "What do you understand by HTML?",
         "opt" : [
             "HTML describes the structure of a webpage",
@@ -22,7 +22,7 @@ const html_ques = [
             "ans" : "All of the above",
         },
         {
-            "id" : "1",
+            "id" : "3",
             "ques" : "What do you understand by HTML?",
             "opt" : [
                 "HTML describes the structure of a webpage",
@@ -33,7 +33,7 @@ const html_ques = [
             "ans" : "All of the above",
         },
     {
-        "id" : "1",
+        "id" : "4",
         "ques" : "What do you understand by HTML?",
         "opt" : [
                 "HTML describes the structure of a webpage",

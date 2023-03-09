@@ -101,16 +101,22 @@ img#banner_img {
     margin-right: 15px;
 }
 .accordion-body {
-    margin: 25px 25px 30px;
-    height: 195px;
+    margin: 25px 25px 50px;
+    height: 100%;
+    /* height: 195px; */
 }
 .quest-btn-group {
     margin: 15px 0px;
     float: right;
 }
-
-.quest-btn-group .ques-submit{
-    background: #0101b9a8;
+button.accordion-button {
+    /* background: #2e2d66 !important; */
+    background: #168599b3 !important;
+    color: white !important;
+}
+.ques-submit {
+    float: right;
+    margin: 5px 0px;
 }
 
 .quest-btn-group .ques-submit:hover,
@@ -119,8 +125,15 @@ img#banner_img {
 {
     background: #121297;
 }
-.alert-danger {
-    --bs-alert-color: #842029;
-    --bs-alert-bg: #f8d7da;
-    --bs-alert-border-color: #f5c2c7;
+.alert-danger, .alert-success{
+    margin-top: 25px;
+}
+
+span.score-text {
+    /* width: 150px; */
+    position: absolute;
+    right: 90px;
+}
+.accordion-button {
+    justify-content: flex-end;
 }
