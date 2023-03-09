@@ -59,7 +59,7 @@ nav.navbar a, .nav-link{
     width: 124px;
     margin-top: 25px;
 }
-.alert.alert-danger {
+.danger_custom {
     padding: 5px 10px;
     font-size: 15px;
     margin-top: 5px;
@@ -118,4 +118,9 @@ img#banner_img {
 .quest-btn-group .ques-submit:active
 {
     background: #121297;
+}
+.alert-danger {
+    --bs-alert-color: #842029;
+    --bs-alert-bg: #f8d7da;
+    --bs-alert-border-color: #f5c2c7;
 }

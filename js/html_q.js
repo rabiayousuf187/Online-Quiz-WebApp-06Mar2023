@@ -17,50 +17,7 @@ banner_heading.innerHTML = "HTML Online Quiz";
 let img = document.getElementById("banner_img");
 img.src = "../img/html.png";
 
-// **************** Submit answer
-
-function ques_submit(actual_ans){
-console.log("actual_ans ====== ",actual_ans);
-
-  let msg = document.querySelector('.accordion-body');
-
-  // let ques_success_alert = `<div class="alert alert-success d-flex align-items-center" role="alert"><svg class="bi flex-shrink-0 me-2" role="img" aria-label="Sluccess:"><use xink:href="#check-circle-fill"/></svg><div>Correct Answer</div></div>`;
-  // let ques_wrong_alert = `<div class="alert alert-danger d-flex align-items-center" role="alert"><svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg><div>Please Select atleast One Option</div></div>`; 
-  
-  let sel_ans = document.querySelector('input[name = "opt" ]:checked' );
-  console.log( "sel_ans" , sel_ans);
-  sel_ans = sel_ans.getAttribute('value');
-  console.log( "sel_ans ----=  value" , sel_ans);
-  
-  if ( sel_ans !== null )
-  {
-      if( sel_ans == actual_ans ){
-        
-        console.log( "correct answer!" , sel_ans);
-        // msg.insertAdjacentHTML('afterend', ques_success_alert );
-        alert('Correct Answer!', 'success');
-      }
-      else{
-          console.log( "wrong answer!" , sel_ans);
-          // msg.insertAdjacentHTML('afterend', ques_wrong_alert );
-          alert('Wrong Answer!', 'danger');
-        }
-  }
-  else if( sel_ans == null){
-        
-        console.log( "sel_ans" , sel_ans);
-    // msg.insertAdjacentHTML('afterend', ques_wrong_alert);
-    alert('Please Select atleast One Option', 'danger');
-  }
  
-
-}
-
-function showing(val){
-  val = val;
-  console.log("utirghjrtkkgm" + val);
-}
-
 html_ques.map((ele,index)=>{
     console.log("index ===== ", ele, index++);
     console.log("index ===== ", ele.opt[0]);
@@ -98,11 +55,7 @@ html_ques.map((ele,index)=>{
             <label class="form-check-label" for="opt">${ele.opt[3]}</label>
         </div>
         <div id="liveAlertPlaceholder"></div>
-        <div class="quest-btn-group">
-            <button type="button" class="btn btn-success" id="show-btn-${ele.id}">Show Answer</button> 
-            ` + render_btn( ele.id , "Submit" , ele.ans ) + `
-            </div>
-            </div>
+        <div class="quest-btn-group" id="quest-btn-group"></div>`+ render_btn( ele.id , "Submit" , ele.ans) +`</div>
     </div>
     </div>`;
     
@@ -162,7 +115,8 @@ function capitalize(str) {
 
 
 function render_btn( id , btn_name , actu_ans){
-  showing(id);
+  console.log("Renduring Button ====== ",id);
+
   // Get a reference to the element where you want to append the new element
   var parentElement = document.querySelector('#accordionExample');
   
@@ -178,28 +132,81 @@ function render_btn( id , btn_name , actu_ans){
   
   console.log("button ====== ", button)
   // Append the new element to the parent element
-  // parentElement.insertAdjacentHTML('beforeend', button);
   parentElement.appendChild(button);
 }
 
+// **************** Submit answer
+function ques_submit(actual_ans){
+  console.log("actual_ans ====== ",actual_ans);
+
+ 
+  
+
+    let msg = document.querySelector('.accordion-body');
+  
+    // let ques_success_alert = `<div class="alert alert-success d-flex align-items-center" role="alert"><svg class="bi flex-shrink-0 me-2" role="img" aria-label="Sluccess:"><use xink:href="#check-circle-fill"/></svg><div>Correct Answer</div></div>`;
+    // let ques_wrong_alert = `<div class="alert alert-danger d-flex align-items-center" role="alert"><svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg><div>Please Select atleast One Option</div></div>`; 
+    
+    let sel_ans = document.querySelector('input[name = "opt" ]:checked' );
+    console.log( "sel_ans" , sel_ans);
+    
+    if ( sel_ans !== null )
+    // if ( sel_ans === null )
+    {
+      sel_ans = sel_ans.getAttribute('value');
+      console.log( "sel_ans ----=  value" , sel_ans);
+        if( sel_ans == actual_ans ){
+          
+          console.log( "correct answer!" , sel_ans);
+          alert_show('Correct Answer!', 'success');
+        }
+        else{
+            console.log( "wrong answer!" , sel_ans);
+            alert_show('Wrong Answer!', 'danger');
+          }
+        }
+    else if( sel_ans === null)
+    {
+      console.log( "sel_ans" , sel_ans);
+      alert_show('Invalid Answer! Please Select atleast One Option', 'danger');
+    }
+   
+  
+  }
 
 
   // ******************** live alert
-  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+  function alert_show( message , type){
+    let alertPlaceholder = document.getElementById('liveAlertPlaceholder');
+    let alert_div = document.createElement('div');
+    let alert_display = `<div class="alert alert-${type} alert-dismissible fade show" role="alert"><strong>${message}</strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>`;
+      alert_div.append(alert_display);
+      console.log(alert_display);
 
-  const alert = (message, type) => {
-    const wrapper = document.createElement('div')
-    wrapper.innerHTML = [
-      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-      `   <div>${message}</div>`,
-      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-      '</div>'
-    ].join('');
+      alertPlaceholder.insertAdjacentHTML('beforeend', alert_display);
+
   
-    alertPlaceholder.append(wrapper)
   }
-  // const alertTrigger = document.getElementById('liveAlertBtn')
 
   
 
 
+// // Get a reference to the alert element
+// const myAlert = document.getElementById('liveAlertPlaceholder');
+
+// // Hide the alert
+// myAlert.style.display = 'none';
+
+// // Show the alert with a message
+// function showAlert(message, type) {
+//   // Set the message and type of the alert
+//   myAlert.innerText = message;
+//   myAlert.classList.remove('alert-primary', 'alert-secondary', 'alert-success', 'alert-danger', 'alert-warning', 'alert-info', 'alert-light', 'alert-dark');
+//   myAlert.classList.add(`alert-${type}`);
+
+//   // Show the alert
+//   myAlert.style.display = 'block';
+// }
+
+// // Example usage
+// showAlert('This is a success alert!', 'success');
