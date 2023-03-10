@@ -46,7 +46,7 @@ html_ques.map((ele, index) => {
 
   
 
-  let main_div = create_div("div", "", "accordion-item", "", "");
+  let main_div = create_div("div", `accordion-item-${ele.id}`, "accordion-item", "", "");
   console.log("main_div ===== ", main_div);
 
   let heading = create_div(
@@ -98,14 +98,17 @@ html_ques.map((ele, index) => {
 
   let accordion_body_div = create_div("div", `accordion-body-${ele.id}`, "accordion-body", "", "");
   accordion_collapse_div.appendChild(accordion_body_div);
+  
+  let form_div = create_div("div", `form${ele.id}`, "form_div", "", "");
+  accordion_body_div.appendChild(form_div);
 
   // radio button for 1st Option
   let form_check_div = create_div("div", ``, "form-check", "", "");
-  accordion_body_div.appendChild(form_check_div);
+  form_div.appendChild(form_check_div);
 
   let form_check_input = create_div(
     "input",
-    `exampleRadios2`,
+    `radio-${ele.id}-0`,
     "form-check-input",
     "",
     ""
@@ -117,7 +120,7 @@ html_ques.map((ele, index) => {
 
   let form_check_label = create_div(
     "label",
-    "",
+    `label-${ele.id}-0`,
     "form-check-label",
     `${ele.opt[0]}`,
     ""
@@ -127,11 +130,11 @@ html_ques.map((ele, index) => {
 
   // radio button for 2nd Option
   form_check_div = create_div("div", ``, "form-check", "", "");
-  accordion_body_div.appendChild(form_check_div);
+  form_div.appendChild(form_check_div);
 
   form_check_input = create_div(
     "input",
-    `exampleRadios2`,
+    `radio-${ele.id}-1`,
     "form-check-input",
     "",
     ""
@@ -143,7 +146,7 @@ html_ques.map((ele, index) => {
 
   form_check_label = create_div(
     "label",
-    "",
+    `label-${ele.id}-1`,
     "form-check-label",
     `${ele.opt[1]}`,
     ""
@@ -153,11 +156,11 @@ html_ques.map((ele, index) => {
 
   // radio button for 3rd Option
   form_check_div = create_div("div", ``, "form-check", "", "");
-  accordion_body_div.appendChild(form_check_div);
+  form_div.appendChild(form_check_div);
 
   form_check_input = create_div(
     "input",
-    `exampleRadios2`,
+    `radio-${ele.id}-2`,
     "form-check-input",
     "",
     ""
@@ -169,7 +172,7 @@ html_ques.map((ele, index) => {
 
   form_check_label = create_div(
     "label",
-    "",
+    `label-${ele.id}-2`,
     "form-check-label",
     `${ele.opt[2]}`,
     ""
@@ -179,11 +182,11 @@ html_ques.map((ele, index) => {
 
   // radio button for 4th Option
   form_check_div = create_div("div", ``, "form-check", "", "");
-  accordion_body_div.appendChild(form_check_div);
+  form_div.appendChild(form_check_div);
 
   form_check_input = create_div(
     "input",
-    `exampleRadios2`,
+    `radio-${ele.id}-3`,
     "form-check-input",
     "",
     ""
@@ -195,7 +198,7 @@ html_ques.map((ele, index) => {
 
   form_check_label = create_div(
     "label",
-    "",
+    `label-${ele.id}-3`,
     "form-check-label",
     `${ele.opt[3]}`,
     ""
@@ -316,14 +319,18 @@ function ques_submit(actual_ans, parent_ele) {
 
   if (sel_ans !== null) {
     // if ( sel_ans === null )
+    let sel_ans_id = sel_ans.getAttribute("id");
     sel_ans = sel_ans.getAttribute("value");
     console.log("sel_ans ----=  value", sel_ans);
+    
     if (sel_ans == actual_ans) {
       score +=10;
       console.log('Correct Answer!', sel_ans);
       console.log('score ===== !', score);
       document.getElementById(`score-text-${id}`).innerHTML =  '10/10';
       console.log('radio disable', document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check'));
+      document.getElementById(sel_ans_id).checked;
+      console.log('radio check', document.getElementById(sel_ans_id).checked).getElementsByClassName('form-check'));
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[0].disabled = true;
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[1].disabled = true;
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[2].disabled = true;
@@ -370,22 +377,7 @@ function alert_show(message, type, parent_ele) {
   alertPlaceholder.appendChild(alert_display);
 }
 
-// // Get a reference to the alert element
-// const myAlert = document.getElementById('liveAlertPlaceholder');
-
-// // Hide the alert
-// myAlert.style.display = 'none';
-
-// // Show the alert with a message
-// function showAlert(message, type) {
-//   // Set the message and type of the alert
-//   myAlert.innerText = message;
-//   myAlert.classList.remove('alert-primary', 'alert-secondary', 'alert-success', 'alert-danger', 'alert-warning', 'alert-info', 'alert-light', 'alert-dark');
-//   myAlert.classList.add(`alert-${type}`);
-
-//   // Show the alert
-//   myAlert.style.display = 'block';
-// }
-
-// // Example usage
-// showAlert('This is a success alert!', 'success');
+function checked_prev_radio( id ){
+  console.log("ID checked ==== ",id);
+  document.getElementById(id).checked;
+}
