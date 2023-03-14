@@ -103,108 +103,37 @@ html_ques.map((ele, index) => {
   accordion_body_div.appendChild(form_div);
 
   // radio button for 1st Option
-  let form_check_div = create_div("div", ``, "form-check", "", "");
-  form_div.appendChild(form_check_div);
+  console.log(`Option length === ${ele.opt.length}`);
+  for( let i = 0 ; i < ele.opt.length ; i++){
+    
+    console.log(`Question === ${ele.id}, Option == ${i} === ${ele.opt[i]}`);
+    let form_check_div = create_div("div", `form_check${ele.id}`, "form-check", "", "");
+    form_div.appendChild(form_check_div);
+  
+    let form_check_input = create_div(
+      "input",
+      `radio-${ele.id}-0`,
+      "form-check-input",
+      "",
+      ""
+    );
+    form_check_input.setAttribute("type", "radio");
+    form_check_input.setAttribute("name", `ques${ele.id}_opt`);
+    form_check_input.setAttribute("value", `${ele.opt[i]}`);
+    form_check_div.appendChild(form_check_input);
+    
+    let form_check_label = create_div(
+      "label",
+      `label-${ele.id}-0`,
+      "form-check-label",
+      `${ele.opt[i]}`,
+      ""
+    );
+    form_check_label.setAttribute("for", `ques${ele.id}_opt`);
+    form_check_div.appendChild(form_check_label);
 
-  let form_check_input = create_div(
-    "input",
-    `radio-${ele.id}-0`,
-    "form-check-input",
-    "",
-    ""
-  );
-  form_check_input.setAttribute("type", "radio");
-  form_check_input.setAttribute("name", "opt");
-  form_check_input.setAttribute("value", `${ele.opt[0]}`);
-  form_check_div.appendChild(form_check_input);
+  }
 
-  let form_check_label = create_div(
-    "label",
-    `label-${ele.id}-0`,
-    "form-check-label",
-    `${ele.opt[0]}`,
-    ""
-  );
-  form_check_label.setAttribute("for", "opt");
-  form_check_div.appendChild(form_check_label);
-
-  // radio button for 2nd Option
-  form_check_div = create_div("div", ``, "form-check", "", "");
-  form_div.appendChild(form_check_div);
-
-  form_check_input = create_div(
-    "input",
-    `radio-${ele.id}-1`,
-    "form-check-input",
-    "",
-    ""
-  );
-  form_check_input.setAttribute("type", "radio");
-  form_check_input.setAttribute("name", "opt");
-  form_check_input.setAttribute("value", `${ele.opt[1]}`);
-  form_check_div.appendChild(form_check_input);
-
-  form_check_label = create_div(
-    "label",
-    `label-${ele.id}-1`,
-    "form-check-label",
-    `${ele.opt[1]}`,
-    ""
-  );
-  form_check_label.setAttribute("for", "opt");
-  form_check_div.appendChild(form_check_label);
-
-  // radio button for 3rd Option
-  form_check_div = create_div("div", ``, "form-check", "", "");
-  form_div.appendChild(form_check_div);
-
-  form_check_input = create_div(
-    "input",
-    `radio-${ele.id}-2`,
-    "form-check-input",
-    "",
-    ""
-  );
-  form_check_input.setAttribute("type", "radio");
-  form_check_input.setAttribute("name", "opt");
-  form_check_input.setAttribute("value", `${ele.opt[2]}`);
-  form_check_div.appendChild(form_check_input);
-
-  form_check_label = create_div(
-    "label",
-    `label-${ele.id}-2`,
-    "form-check-label",
-    `${ele.opt[2]}`,
-    ""
-  );
-  form_check_label.setAttribute("for", "opt");
-  form_check_div.appendChild(form_check_label);
-
-  // radio button for 4th Option
-  form_check_div = create_div("div", ``, "form-check", "", "");
-  form_div.appendChild(form_check_div);
-
-  form_check_input = create_div(
-    "input",
-    `radio-${ele.id}-3`,
-    "form-check-input",
-    "",
-    ""
-  );
-  form_check_input.setAttribute("type", "radio");
-  form_check_input.setAttribute("name", "opt");
-  form_check_input.setAttribute("value", `${ele.opt[3]}`);
-  form_check_div.appendChild(form_check_input);
-
-  form_check_label = create_div(
-    "label",
-    `label-${ele.id}-3`,
-    "form-check-label",
-    `${ele.opt[3]}`,
-    ""
-  );
-  form_check_label.setAttribute("for", "opt");
-  form_check_div.appendChild(form_check_label);
 
   let alert_show = create_div(
     "div",
@@ -220,7 +149,7 @@ html_ques.map((ele, index) => {
     "Submit"
   );
   qus_btn.onclick = () => {
-      ques_submit(ele.ans , ele.id)
+      ques_submit(ele.ans , ele.id , `ques${ele.id}_opt`)
     }; 
      accordion_body_div.appendChild(qus_btn);
 });
@@ -307,14 +236,14 @@ function capitalize(str) {
 }
 
 // **************** Submit answer
-function ques_submit(actual_ans, parent_ele) {
+function ques_submit(actual_ans, parent_ele, sel_ans ) {
   console.log("actual_ans ====== ", actual_ans);
   let id = parent_ele;
   console.log("id ====== ", id);
   parent_ele = `#show_alert-${parent_ele}`;
   console.log("parent_ele ====== ", parent_ele);
 
-  let sel_ans = document.querySelector('input[name = "opt" ]:checked');
+  sel_ans = document.querySelector(`input[name = ${sel_ans} ]:checked`);
   console.log("sel_ans", sel_ans);
 
   if (sel_ans !== null) {
@@ -330,13 +259,16 @@ function ques_submit(actual_ans, parent_ele) {
       document.getElementById(`score-text-${id}`).innerHTML =  '10/10';
       console.log('radio disable', document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check'));
       document.getElementById(sel_ans_id).checked;
-      console.log('radio check', document.getElementById(sel_ans_id).checked).getElementsByClassName('form-check'));
+      console.log('radio disable', document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check'));
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[0].disabled = true;
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[1].disabled = true;
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[2].disabled = true;
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[3].disabled = true;
       document.getElementById(`accordion-body-${id}`).disabled = true;
       document.getElementById(`check-btn-${id}`).disabled = true;
+      if(document.getElementsByClassName('alert-danger')[0] !== undefined){
+        document.getElementsByClassName('alert-danger')[0].style.display = "none";
+      }
       alert_show('Correct Answer!', 'success', parent_ele);
       
     } else {
@@ -349,11 +281,15 @@ function ques_submit(actual_ans, parent_ele) {
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[3].disabled = true;
       document.getElementById(`accordion-body-${id}`).disabled = true;
       document.getElementById(`check-btn-${id}`).disabled = true;
+      if(document.getElementsByClassName('alert-danger')[0] !== undefined){
+        document.getElementsByClassName('alert-danger')[0].style.display = "none";
+      }
       alert_show('Wrong Answer!', 'danger', parent_ele);
     }
   } else if (sel_ans === null) {
     console.log("sel_ans", sel_ans);
-    alert_show("Invalid Answer! Please Select atleast One Option","danger", parent_ele, );
+    alert_show("Invalid Answer! Please Select atleast One Option","danger", parent_ele ); 
+  
   }
 }
 
@@ -363,17 +299,17 @@ function alert_show(message, type, parent_ele) {
 
   // let alert_div = document.createElement("div");
 
-  let alert_display = create_div('div', '', `alert alert-${type} alert-dismissible fade show`, '', '');
+  let alert_display = create_div('div', 'alert', `alert alert-${type} alert-dismissible fade show`, '', '');
   alert_display.setAttribute('role','alert');
+  // alert_display.style.display = css_att;
   alert_display.appendChild( create_div('strong', '', '', message, '') );
-  let button = create_div('button', '', 'btn-close', '', '');
-  button.setAttribute('type','button');
-  button.setAttribute('data-bs-dismiss','alert');
-  button.setAttribute('aria-label','Close');
-  alert_display.appendChild( button);
+  // let button = create_div('button', '', 'btn-close', '', '');
+  // button.setAttribute('type','button');
+  // button.setAttribute('data-bs-dismiss','alert');
+  // button.setAttribute('aria-label','Close');
+  // alert_display.appendChild( button);
   
   console.log(alert_display);
-
   alertPlaceholder.appendChild(alert_display);
 }
 
