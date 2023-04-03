@@ -1,6 +1,7 @@
 console.log("HTML PAGE");
 import { html_ques } from "./html_ques.js";
 let score = 0;
+let not_attempt = 0;
 
 console.log("HTML questiuons === ", html_ques[0]["opt"]);
 console.log("HTML questiuons === ", html_ques[0]["opt"][1]);
@@ -257,6 +258,9 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
     console.log("sel_ans ----=  value", sel_ans);
     
     if (sel_ans == actual_ans) {
+      not_attempt--;
+      console.log("not_attempt ==== ", not_attempt);
+
       score +=10;
       console.log('Correct Answer!', sel_ans);
       console.log('score ===== !', score);
@@ -272,12 +276,15 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
       document.getElementById(`check-btn-${id}`).disabled = true;
       console.log(document.getElementById(`danger${id}`));
       // if(document.getElementsByClassName('alert-danger')[0] !== undefined){
-      if(document.getElementById(`danger${id}`) !== undefined){
-        document.getElementById(`danger${id}`).remove();
+      if(document.getElementById(`non_sele_danger${id}`) !== null){
+        document.getElementById(`non_sele_danger${id}`).remove();
       }
-      alert_show('Correct Answer!', `${id}`,'success', parent_ele);
+      alert_show('Correct Answer!', `success_${id}`,'success', parent_ele);
       
     } else {
+      not_attempt--;
+      console.log("not_attempt ==== ", not_attempt);
+
       score +=0;
       console.log('Wrong Answer!', sel_ans);
       console.log('radio disable', document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check'));
@@ -287,17 +294,16 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[3].disabled = true;
       document.getElementById(`accordion-body-${id}`).disabled = true;
       document.getElementById(`check-btn-${id}`).disabled = true;
-      if(document.getElementById(`danger${id}`) !== undefined){
-        document.getElementById(`danger${id}`).remove();
+      if(document.getElementById(`non_sele_danger${id}`) !== null){
+        document.getElementById(`non_sele_danger${id}`).remove();
       }
-      alert_show('Wrong Answer!', `${id}`, 'danger' ,  parent_ele);
+      alert_show('Wrong Answer!', `sele_danger${id}`, 'danger' ,  parent_ele);
     }
-  } else if (sel_ans === null) {
-    console.log("sel_ans", sel_ans);
-    if(document.getElementById(`danger${id}`) !== undefined){
-      document.getElementById(`danger${id}`).remove();
+  }
+  if ( sel_ans === null ) {
+    if( document.getElementById(`non_sele_danger${id}`) === null ){
+      alert_show("Invalid Answer! Please Select atleast One Option",`non_sele_danger${id}`,"danger", parent_ele ); 
     }
-    alert_show("Invalid Answer! Please Select atleast One Option",`${id}`,"danger", parent_ele ); 
   
   }
 }
@@ -309,7 +315,7 @@ function alert_show(message, id , type, parent_ele) {
 
   // let alert_div = document.createElement("div");
 
-  let alert_display = create_div('div', `${type + id}`, `alert alert-${type} alert-dismissible fade show`, '', '');
+  let alert_display = create_div('div', id, `alert alert-${type} alert-dismissible fade show`, '', '');
   alert_display.setAttribute('role','alert');
   // alert_display.style.display = css_att;
   alert_display.appendChild( create_div('strong', '', '', message, '') );
@@ -330,26 +336,53 @@ var finish_btn = create_div(
   "Finish"
 );
 finish_btn.onclick = () => {
-  let un_answer;
-  let ind = 0;
-  let parent_div = 1;
+  
     console.log("finish");
     localStorage.setItem("total_score",score);
-
-    console.log("html_ques.length ====== ", html_ques.length);
+    check_not_attempt();
+    if ( not_attempt === 0){
+      console.log("window.location ==== ", window.location);
+      console.log("window.location ==== ", window.location.href);
+      console.log("window.location ==== ", window.location.href.lastIndexOf('/')+"certificate/certificate.html");
+      // console.log("window.location ==== ", window.location.href.lastIndexOf('/')+"certificate/certificate.html");
+    }
+    
+};
+  document.querySelector(".quiz_sect_content").appendChild(finish_btn);
+function check_not_attempt(){
+  let un_answer;
+  let ind = 0;
+  let div_id;
+  console.log("html_ques.length ====== ", html_ques.length);
 
     for( ind ;  ind < html_ques.length ; ind++){
-      document.getElementById(`form${ind}`)
-      console.log("Form no ===== ", `form${ind}`);
-      un_answer = document.querySelector(`input[name = ques${ind}_opt ]:checked`);
+      div_id = 1 + ind;
+      document.getElementById(`form${div_id}`)
+      console.log("Form no ===== ", `form${div_id}`);
+      un_answer = document.querySelector(`input[name = ques${div_id}_opt ]:checked`);
       if(un_answer === null)
       {
         console.log("un_answer", un_answer);
-        alert_show("Invalid Answer! Please Select atleast One Option", `${parent_div + ind}` , "danger", `#show_alert-${parent_div + ind}`) ;
+        console.log(`danger${div_id}`);
+        // console.log(document.getElementById(`danger${div_id}`));
+        if(document.getElementById(`non_sele_danger${div_id}`) === null){
+          alert_show("Invalid Answer! Please Select atleast One Option", `non_sele_danger${div_id}` , "danger", `#show_alert-${div_id}`) ;
+          not_attempt++;
+          // return not_attempt;
+        }
+        else if(document.getElementById(`non_sele_danger${div_id}`) !== null){
+         not_attempt;
+        }
+        else {
+          not_attempt;
+        }
+      }
+      // not_attempt === 0 all are attempt
+      else{
+       not_attempt;
       }
 
+      console.log("not_attempt ==== ", not_attempt);
   }; 
-};
-  document.querySelector(".quiz_sect_content").appendChild(finish_btn);
-
+}
 
