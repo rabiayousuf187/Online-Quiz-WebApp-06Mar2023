@@ -4,7 +4,10 @@ let score = 0;
 
 console.log("HTML questiuons === ", html_ques[0]["opt"]);
 console.log("HTML questiuons === ", html_ques[0]["opt"][1]);
-
+function finish(){
+  console.log("score ==== ",score);
+  // localStorage.setItem("total_score",score);
+}
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ", quiz_data);
 let username = quiz_data.username;
@@ -243,6 +246,7 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
   parent_ele = `#show_alert-${parent_ele}`;
   console.log("parent_ele ====== ", parent_ele);
 
+  console.log("sel_ans", sel_ans);
   sel_ans = document.querySelector(`input[name = ${sel_ans} ]:checked`);
   console.log("sel_ans", sel_ans);
 
@@ -266,10 +270,12 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[3].disabled = true;
       document.getElementById(`accordion-body-${id}`).disabled = true;
       document.getElementById(`check-btn-${id}`).disabled = true;
-      if(document.getElementsByClassName('alert-danger')[0] !== undefined){
-        document.getElementsByClassName('alert-danger')[0].style.display = "none";
+      console.log(document.getElementById(`danger${id}`));
+      // if(document.getElementsByClassName('alert-danger')[0] !== undefined){
+      if(document.getElementById(`danger${id}`) !== undefined){
+        document.getElementById(`danger${id}`).style.display = "none";
       }
-      alert_show('Correct Answer!', 'success', parent_ele);
+      alert_show('Correct Answer!', `${id}`,'success', parent_ele);
       
     } else {
       score +=0;
@@ -281,25 +287,29 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[3].disabled = true;
       document.getElementById(`accordion-body-${id}`).disabled = true;
       document.getElementById(`check-btn-${id}`).disabled = true;
-      if(document.getElementsByClassName('alert-danger')[0] !== undefined){
-        document.getElementsByClassName('alert-danger')[0].style.display = "none";
+      if(document.getElementById(`danger${id}`) !== undefined){
+        document.getElementById(`danger${id}`).style.display = "none";
       }
-      alert_show('Wrong Answer!', 'danger', parent_ele);
+      alert_show('Wrong Answer!', `${id}`, 'danger' ,  parent_ele);
     }
   } else if (sel_ans === null) {
     console.log("sel_ans", sel_ans);
-    alert_show("Invalid Answer! Please Select atleast One Option","danger", parent_ele ); 
+    if(document.getElementById(`danger${id}`) !== undefined){
+      document.getElementById(`danger${id}`).style.display = "none";
+    }
+    alert_show("Invalid Answer! Please Select atleast One Option",`${id}`,"danger", parent_ele ); 
   
   }
 }
 
 // ******************** live alert
-function alert_show(message, type, parent_ele) {
+function alert_show(message, id , type, parent_ele) {
+  console.log("parent_ele ==== ",parent_ele);
   let alertPlaceholder = document.querySelector(parent_ele);
 
   // let alert_div = document.createElement("div");
 
-  let alert_display = create_div('div', 'alert', `alert alert-${type} alert-dismissible fade show`, '', '');
+  let alert_display = create_div('div', `${type + id}`, `alert alert-${type} alert-dismissible fade show`, '', '');
   alert_display.setAttribute('role','alert');
   // alert_display.style.display = css_att;
   alert_display.appendChild( create_div('strong', '', '', message, '') );
@@ -309,11 +319,37 @@ function alert_show(message, type, parent_ele) {
   // button.setAttribute('aria-label','Close');
   // alert_display.appendChild( button);
   
+  console.log("alertPlaceholder ==== ",alertPlaceholder);
   console.log(alert_display);
   alertPlaceholder.appendChild(alert_display);
 }
+var finish_btn = create_div(
+  "button",
+  '',
+  "btn btn-warning ques-submit",
+  "Finish"
+);
+finish_btn.onclick = () => {
+  let un_answer;
+  let ind = 0;
+  let parent_div = 1;
+    console.log("finish");
+    localStorage.setItem("total_score",score);
 
-function checked_prev_radio( id ){
-  console.log("ID checked ==== ",id);
-  document.getElementById(id).checked;
-}
+    console.log("html_ques.length ====== ", html_ques.length);
+
+    for( ind ;  ind < html_ques.length ; ind++){
+      document.getElementById(`form${ind}`)
+      console.log("Form no ===== ", `form${ind}`);
+      un_answer = document.querySelector(`input[name = ques${ind}_opt ]:checked`);
+      if(un_answer === null)
+      {
+        console.log("un_answer", un_answer);
+        alert_show("Invalid Answer! Please Select atleast One Option", `${parent_div + ind}` , "danger", `#show_alert-${parent_div + ind}`) ;
+      }
+
+  }; 
+};
+  document.querySelector(".quiz_sect_content").appendChild(finish_btn);
+
+
