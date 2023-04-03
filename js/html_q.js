@@ -273,7 +273,7 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
       console.log(document.getElementById(`danger${id}`));
       // if(document.getElementsByClassName('alert-danger')[0] !== undefined){
       if(document.getElementById(`danger${id}`) !== undefined){
-        document.getElementById(`danger${id}`).style.display = "none";
+        document.getElementById(`danger${id}`).remove();
       }
       alert_show('Correct Answer!', `${id}`,'success', parent_ele);
       
@@ -288,14 +288,14 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
       document.getElementById(`accordion-body-${id}`).disabled = true;
       document.getElementById(`check-btn-${id}`).disabled = true;
       if(document.getElementById(`danger${id}`) !== undefined){
-        document.getElementById(`danger${id}`).style.display = "none";
+        document.getElementById(`danger${id}`).remove();
       }
       alert_show('Wrong Answer!', `${id}`, 'danger' ,  parent_ele);
     }
   } else if (sel_ans === null) {
     console.log("sel_ans", sel_ans);
     if(document.getElementById(`danger${id}`) !== undefined){
-      document.getElementById(`danger${id}`).style.display = "none";
+      document.getElementById(`danger${id}`).remove();
     }
     alert_show("Invalid Answer! Please Select atleast One Option",`${id}`,"danger", parent_ele ); 
   
