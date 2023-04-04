@@ -345,7 +345,7 @@ finish_btn.onclick = () => {
     console.log("finish");
     localStorage.setItem("total_score",score);
     check_not_attempt();
-    not_attempt = 0;
+    // not_attempt = 0;
 
     if ( not_attempt === 0){
       // setInterval( ()=>{
@@ -355,7 +355,7 @@ finish_btn.onclick = () => {
       let img = create_div('img' , 'result_img', 'result_img', ``);
       
       percent_score = ( score / (html_ques.length * 100) ) * 100;
-      percent_score = 60;
+      // percent_score = 60;
       if( percent_score >= 70){
         img_loc = "../img/gold-trophy.jpg"
         img.setAttribute('src' ,  img_loc);
