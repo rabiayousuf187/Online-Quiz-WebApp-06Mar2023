@@ -1,5 +1,9 @@
 console.log("generate certificate");
-const userName = document.getElementById("name");
+// const userName = document.getElementById("name");
+// const submitBtn = document.getElementById("submitBtn");
+let userName = localStorage.getItem("quiz_data");
+userName = JSON.parse(userName)['username'];
+console.log("Username === ", userName);
 const submitBtn = document.getElementById("submitBtn");
 
 let quiz_data = JSON.parse(localStorage.getItem("total_score"));
