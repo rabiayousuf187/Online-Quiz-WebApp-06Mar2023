@@ -337,13 +337,17 @@ var finish_btn = create_div(
 );
 finish_btn.onclick = () => {
   
+  let location = window.location.href;
     console.log("finish");
     localStorage.setItem("total_score",score);
     check_not_attempt();
+    not_attempt = 0;
+
     if ( not_attempt === 0){
       console.log("window.location ==== ", window.location);
       console.log("window.location ==== ", window.location.href);
-      console.log("window.location ==== ", window.location.href.lastIndexOf('/')+"certificate/certificate.html");
+      location = location.slice(0 , window.location.href.lastIndexOf('/') + 1 )+"certificate/certificate.html";
+      console.log("updated location==== ", location);
       // console.log("window.location ==== ", window.location.href.lastIndexOf('/')+"certificate/certificate.html");
     }
     
