@@ -349,6 +349,9 @@ finish_btn.onclick = () => {
       location = location.slice(0 , window.location.href.lastIndexOf('/') + 1 )+"certificate/certificate.html";
       console.log("updated location==== ", location);
       // console.log("window.location ==== ", window.location.href.lastIndexOf('/')+"certificate/certificate.html");
+    
+    
+    
     }
     
 };
