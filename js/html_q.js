@@ -1,6 +1,7 @@
 console.log("HTML PAGE");
 import { html_ques } from "./html_ques.js";
 let score = 0;
+let incorrect_ans = 0;
 let not_attempt = 0;
 
 console.log("HTML questiuons === ", html_ques[0]["opt"]);
@@ -286,6 +287,7 @@ function ques_submit(actual_ans, parent_ele, sel_ans ) {
       console.log("not_attempt ==== ", not_attempt);
 
       score +=0;
+      incorrect_ans +=10;
       console.log('Wrong Answer!', sel_ans);
       console.log('radio disable', document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check'));
       document.getElementById(`accordion-body-${id}`).getElementsByClassName('form-check-input')[0].disabled = true;
@@ -350,6 +352,38 @@ finish_btn.onclick = () => {
       console.log("updated location==== ", location);
       // console.log("window.location ==== ", window.location.href.lastIndexOf('/')+"certificate/certificate.html");
     
+      let result = document.getElementById("result");
+      result.appendChild(create_div('h2' , 'result_heading', 'result_heading', 'Result'));
+      result.appendChild(create_div('div' , 'inner_text', 'inner_text', ''));
+      document.querySelector('.inner_text').appendChild(create_div('i','','bi bi-card-list'));
+      document.querySelector('.inner_text').appendChild((create_div('h6' , 'inner_text', 'inner_text', `Number of Questions#  ${html_ques.length}`)));
+      result.appendChild(create_div('h2' , 'username_style', 'username_style', `${username}`));
+      let img = create_div('img' , 'result_img', 'result_img', ``);
+      img.setAttribute('src' ,  "../img/gold-trophy.jpg");
+      img.setAttribute('alt' ,  "gold-trophy");
+      img.setAttribute('title' ,  "gold-trophy");
+      result.appendChild(img);
+      
+      let inner_ele = create_div('table' , 'result_tb', 'result_tb', ``);
+      inner_ele.appendChild(create_div('thead' , 'tb_head', 'tb_head', ``)).appendChild(create_div('tr' , '', 'th_row', ``));
+      
+      // inner_ele.appendChild(create_div('thead' , 'tb_head', 'col-4tb_head', ``))
+      // inner_ele.appendChild(create_div('div' , 'correct_ans', 'col-4', `${score}`))
+      // inner_ele.appendChild(create_div('div' , 'incorrect_ans', 'col-4', `${incorrect_ans}`))
+      result.appendChild(inner_ele);
+      
+      inner_ele = document.querySelector('.th_row')
+      inner_ele.appendChild( create_div('td' , 'td', 'td', `Questions`) );
+      inner_ele.appendChild( create_div('td' , 'td', 'td', `Correct`));
+      inner_ele.appendChild( create_div('td' , 'td', 'td', `InCorrect`));
+
+      document.getElementById('result_tb').appendChild(create_div('tbody' , 'tb_tbody', 'tb_body', ``)).appendChild(create_div('tr' , '', 'th_row2', ``));
+      inner_ele = document.querySelector('.th_row2')
+      inner_ele.appendChild( create_div('td' , 'td', 'td', `${html_ques.length}`));
+      inner_ele.appendChild( create_div('td' , 'td', 'td', `${score}`));
+      inner_ele.appendChild( create_div('td' , 'td', 'td', `${incorrect_ans}`));
+      // console.log(document.querySelector('.th_row'));
+      console.log(document.querySelector('#result'));
     
     
     }
