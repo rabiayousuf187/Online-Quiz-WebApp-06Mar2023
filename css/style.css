@@ -137,3 +137,54 @@ span.score-text {
 .accordion-button {
     justify-content: flex-end;
 }
+
+/* ******************************* HTML  Result DIV **************************/
+div#result {
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 90px;
+    border: 4px solid #00000014;
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 5px 5px 14px 8px #9993933b;
+}
+h2#result_heading {
+    font-family: 'Noto Serif Sinhala', serif;
+    font-size: 55px;
+}
+div#inner_text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 30px;
+}
+h6#inner_text {
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+h2#username_style {
+    font-family: 'Dancing Script', cursive;
+    font-size: 55px;
+}
+i.bi.bi-card-list {
+    margin-right: 14px;
+    margin-left: 3%;
+}
+img#result_img {
+    border: 5px solid #781818;
+    border-radius: 50%;
+}
+table#result_tb {
+    width: 60%;
+    margin: 30px auto;
+    font-size: 20px;
+}
+table#result_tb thead {
+    font-weight: bolder;
+}
+table#result_tb td#td {
+    font-family: 'Noto Serif Sinhala', serif;
+}
+/* 
+font-family: 'Dancing Script', cursive;
+font-family: 'Noto Serif Sinhala', serif; */

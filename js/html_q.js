@@ -2,6 +2,7 @@ console.log("HTML PAGE");
 import { html_ques } from "./html_ques.js";
 let score = 0;
 let incorrect_ans = 0;
+let percent_score = 0;
 let not_attempt = 0;
 
 console.log("HTML questiuons === ", html_ques[0]["opt"]);
@@ -340,12 +341,42 @@ var finish_btn = create_div(
 finish_btn.onclick = () => {
   
   let location = window.location.href;
+  let img_loc;
     console.log("finish");
     localStorage.setItem("total_score",score);
     check_not_attempt();
     not_attempt = 0;
 
     if ( not_attempt === 0){
+      // setInterval( ()=>{
+
+      // } ,3000 );
+
+      let img = create_div('img' , 'result_img', 'result_img', ``);
+      
+      percent_score = ( score / (html_ques.length * 100) ) * 100;
+      percent_score = 60;
+      if( percent_score >= 70){
+        img_loc = "../img/gold-trophy.jpg"
+        img.setAttribute('src' ,  img_loc);
+        img.setAttribute('alt' ,  "gold-trophy");
+        img.setAttribute('title' ,  "gold-trophy");
+      }
+      else if ( percent_score < 70 && percent_score >= 60 ){
+        img_loc = "../img/medal.jpg"
+        img.setAttribute('src' ,  img_loc);
+        img.setAttribute('alt' ,  "medal");
+        img.setAttribute('title' ,  "medal");
+        img.style.width = "200px";
+      }
+      else{
+        img_loc = "../img/danger.jpg";
+        img.setAttribute('src' ,  img_loc);
+        img.setAttribute('alt' ,  "danger");
+        img.setAttribute('title' ,  "danger");
+        img.style.padding = "20px 20px";
+        img.style.width = "200px";
+      }
       console.log("window.location ==== ", window.location);
       console.log("window.location ==== ", window.location.href);
       location = location.slice(0 , window.location.href.lastIndexOf('/') + 1 )+"certificate/certificate.html";
@@ -358,10 +389,7 @@ finish_btn.onclick = () => {
       document.querySelector('.inner_text').appendChild(create_div('i','','bi bi-card-list'));
       document.querySelector('.inner_text').appendChild((create_div('h6' , 'inner_text', 'inner_text', `Number of Questions#  ${html_ques.length}`)));
       result.appendChild(create_div('h2' , 'username_style', 'username_style', `${username}`));
-      let img = create_div('img' , 'result_img', 'result_img', ``);
-      img.setAttribute('src' ,  "../img/gold-trophy.jpg");
-      img.setAttribute('alt' ,  "gold-trophy");
-      img.setAttribute('title' ,  "gold-trophy");
+      
       result.appendChild(img);
       
       let inner_ele = create_div('table' , 'result_tb', 'result_tb', ``);
