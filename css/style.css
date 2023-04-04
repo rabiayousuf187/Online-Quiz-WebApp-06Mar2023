@@ -147,6 +147,7 @@ div#result {
     border-radius: 15px;
     background: #ffffff;
     box-shadow: 5px 5px 14px 8px #9993933b;
+    display: none;
 }
 h2#result_heading {
     font-family: 'Noto Serif Sinhala', serif;

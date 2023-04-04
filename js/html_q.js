@@ -334,7 +334,7 @@ function alert_show(message, id , type, parent_ele) {
 }
 var finish_btn = create_div(
   "button",
-  '',
+  'finish_btn',
   "btn btn-warning ques-submit",
   "Finish"
 );
@@ -384,12 +384,12 @@ finish_btn.onclick = () => {
       // console.log("window.location ==== ", window.location.href.lastIndexOf('/')+"certificate/certificate.html");
     
       let result = document.getElementById("result");
+      result.style.display = "block";
       result.appendChild(create_div('h2' , 'result_heading', 'result_heading', 'Result'));
       result.appendChild(create_div('div' , 'inner_text', 'inner_text', ''));
       document.querySelector('.inner_text').appendChild(create_div('i','','bi bi-card-list'));
       document.querySelector('.inner_text').appendChild((create_div('h6' , 'inner_text', 'inner_text', `Number of Questions#  ${html_ques.length}`)));
       result.appendChild(create_div('h2' , 'username_style', 'username_style', `${username}`));
-      
       result.appendChild(img);
       
       let inner_ele = create_div('table' , 'result_tb', 'result_tb', ``);
@@ -413,7 +413,7 @@ finish_btn.onclick = () => {
       // console.log(document.querySelector('.th_row'));
       console.log(document.querySelector('#result'));
     
-    
+      document.getElementById('finish_btn').disabled = true;
     }
     
 };
