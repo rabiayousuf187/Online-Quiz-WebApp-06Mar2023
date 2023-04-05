@@ -5,6 +5,21 @@ let incorrect_ans = 0;
 let percent_score = 0;
 let not_attempt = 0;
 
+
+// html_ques.push({
+//   "id" : "10",
+//   "ques" : "What do you understand by HTML?",
+//   "opt" : [
+//           "HTML describes the structure of a webpage",
+//           "HTML is the standard markup language mainly used to create web pages",
+//           "HTML consists of a set of elements that helps the browser how to view the content",
+//           "All of the above"
+//       ],
+//   "ans" : "All of the above",
+// });
+
+// console.log("HTML questiuons === ", html_ques[length-1]);
+
 console.log("HTML questiuons === ", html_ques[0]["opt"]);
 console.log("HTML questiuons === ", html_ques[0]["opt"][1]);
 function finish(){
@@ -365,6 +380,7 @@ var finish_btn = create_div(
   "Finish"
 );
 finish_btn.onclick = () => {
+
   
   let location = window.location.href;
   let img_loc;
