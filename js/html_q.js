@@ -5,19 +5,6 @@ let incorrect_ans = 0;
 let percent_score = 0;
 let not_attempt = 0;
 
-
-// html_ques.push({
-//   "id" : "10",
-//   "ques" : "What do you understand by HTML?",
-//   "opt" : [
-//           "HTML describes the structure of a webpage",
-//           "HTML is the standard markup language mainly used to create web pages",
-//           "HTML consists of a set of elements that helps the browser how to view the content",
-//           "All of the above"
-//       ],
-//   "ans" : "All of the above",
-// });
-
 // console.log("HTML questiuons === ", html_ques[length-1]);
 
 console.log("HTML questiuons === ", html_ques[0]["opt"]);
@@ -53,20 +40,13 @@ function create_div(ele, id, cls, ele_name) {
 
 html_ques.map((ele, index) => {
   console.log("index ===== ", ele, index++);
-  // console.log("index ===== ", ele.opt[0]);
-  // console.log("index ===== ", ele.opt[1]);
-  // console.log("index ===== ", ele.opt[2]);
-  // console.log("index ===== ", ele.opt[3]);
 
   let indexCapText = capitalize(convertNumberToEnglish(index));
 
   console.log("indexCapText", indexCapText);
 
   let ques_div = document.querySelector("#accordionExample");
-  // ques_div.insertAdjacentHTML('beforeend', ques_ele);
-
   
-
   let main_div = create_div("div", `accordion-item-${ele.id}`, "accordion-item", "", "");
   console.log("main_div ===== ", main_div);
 
@@ -335,14 +315,9 @@ function alert_show(message, id , type, parent_ele) {
 
   let alert_display = create_div('div', id, `alert alert-${type} alert-dismissible fade show`, '', '');
   alert_display.setAttribute('role','alert');
-  // alert_display.style.display = css_att;
-  alert_display.appendChild( create_div('strong', '', '', message, '') );
-  // let button = create_div('button', '', 'btn-close', '', '');
-  // button.setAttribute('type','button');
-  // button.setAttribute('data-bs-dismiss','alert');
-  // button.setAttribute('aria-label','Close');
-  // alert_display.appendChild( button);
   
+  alert_display.appendChild( create_div('strong', '', '', message, '') );
+    
   console.log("alertPlaceholder ==== ",alertPlaceholder);
   console.log(alert_display);
   alertPlaceholder.appendChild(alert_display);
@@ -380,19 +355,19 @@ var finish_btn = create_div(
   "Finish"
 );
 finish_btn.onclick = () => {
-
   
   let location = window.location.href;
   let img_loc;
   let time_delay = 3000;
+  let img = create_div('img' , 'result_img', 'result_img', ``);
+
     console.log("finish");
     localStorage.setItem("corrct answer",score);
     check_not_attempt();
-    not_attempt = 0;
-    let img = create_div('img' , 'result_img', 'result_img', ``);
+    // not_attempt = 0;
     
     percent_score = ( score / (html_ques.length * 100) ) * 100;
-    percent_score = 60;
+    // percent_score = 60;
 
     if ( not_attempt === 0){
       document.getElementById('finish_btn').disabled = true;
@@ -467,10 +442,6 @@ finish_btn.onclick = () => {
       
       let inner_ele = create_div('table' , 'result_tb', 'result_tb', ``);
       inner_ele.appendChild(create_div('thead' , 'tb_head', 'tb_head', ``)).appendChild(create_div('tr' , '', 'th_row', ``));
-      
-      // inner_ele.appendChild(create_div('thead' , 'tb_head', 'col-4tb_head', ``))
-      // inner_ele.appendChild(create_div('div' , 'correct_ans', 'col-4', `${score}`))
-      // inner_ele.appendChild(create_div('div' , 'incorrect_ans', 'col-4', `${incorrect_ans}`))
       result.appendChild(inner_ele);
       
       inner_ele = document.querySelector('.th_row')
@@ -488,7 +459,7 @@ finish_btn.onclick = () => {
       
       } ,time_delay );
       
-      // clearTimeout(funct_result);
+      clearTimeout(funct_result);
     }
 
 };
@@ -508,7 +479,6 @@ function check_not_attempt(){
       {
         console.log("un_answer", un_answer);
         console.log(`danger${div_id}`);
-        // console.log(document.getElementById(`danger${div_id}`));
         if(document.getElementById(`non_sele_danger${div_id}`) === null){
           alert_show("Invalid Answer! Please Select atleast One Option", `non_sele_danger${div_id}` , "danger", `#show_alert-${div_id}`) ;
           not_attempt++;
