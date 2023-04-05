@@ -343,19 +343,22 @@ finish_btn.onclick = () => {
   let location = window.location.href;
   let img_loc;
     console.log("finish");
-    localStorage.setItem("total_score",score);
+    localStorage.setItem("corrct answer",score);
     check_not_attempt();
-    // not_attempt = 0;
+    not_attempt = 0;
+    let img = create_div('img' , 'result_img', 'result_img', ``);
+    
+    percent_score = ( score / (html_ques.length * 100) ) * 100;
+    percent_score = 60;
 
     if ( not_attempt === 0){
-      // setInterval( ()=>{
-
-      // } ,3000 );
-
-      let img = create_div('img' , 'result_img', 'result_img', ``);
+      let funct_result =  setTimeout( ()=>{
+        console.log("INterval ==== 3000");
+        document.getElementById('body').appendChild(create_div('h2' , 'result_heading', 'result_heading', 'Result'));
       
-      percent_score = ( score / (html_ques.length * 100) ) * 100;
-      // percent_score = 60;
+      } ,2500 );
+
+      clearTimeout(funct_result);
       if( percent_score >= 70){
         img_loc = "../img/gold-trophy.jpg"
         img.setAttribute('src' ,  img_loc);
@@ -414,6 +417,7 @@ finish_btn.onclick = () => {
       console.log(document.querySelector('#result'));
     
       document.getElementById('finish_btn').disabled = true;
+      
     }
     
 };
