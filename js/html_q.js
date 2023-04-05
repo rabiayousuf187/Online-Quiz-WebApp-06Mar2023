@@ -332,6 +332,32 @@ function alert_show(message, id , type, parent_ele) {
   console.log(alert_display);
   alertPlaceholder.appendChild(alert_display);
 }
+
+// ********************************* new loader
+function ShowProgress() {
+  setTimeout(function() {
+    var loading = $(".loading");
+    loading.show();
+    $('#overlay').css({
+      'display': 'block',
+      opacity: 0.7,
+      'width': $(document).width(),
+      'height': $(document).height()
+    });
+    $('body').css({
+      'overflow': 'hidden'
+    });
+    $('#loading').css({
+      'display': 'block'
+    }).click(function() {
+      $(this).css('display', 'none');
+      $('#screen').css('display', 'none')
+    });
+  }, 200);
+  $('#main').dialog({
+    modal: true
+  });
+}
 var finish_btn = create_div(
   "button",
   'finish_btn',
@@ -342,6 +368,7 @@ finish_btn.onclick = () => {
   
   let location = window.location.href;
   let img_loc;
+  let time_delay = 3000;
     console.log("finish");
     localStorage.setItem("corrct answer",score);
     check_not_attempt();
@@ -352,13 +379,40 @@ finish_btn.onclick = () => {
     percent_score = 60;
 
     if ( not_attempt === 0){
-      let funct_result =  setTimeout( ()=>{
-        console.log("INterval ==== 3000");
-        document.getElementById('body').appendChild(create_div('h2' , 'result_heading', 'result_heading', 'Result'));
+      document.getElementById('finish_btn').disabled = true;
+      document.getElementById('accordionExample').style.opacity = '0.2';
+      document.getElementById('quiz_sect_content').insertAdjacentHTML("afterbegin" , `<div id='loading' class="loading" align="center">
+      <div class="main">
+          <div class="small1">
+            <div class="small ball smallball1"></div>
+            <div class="small ball smallball2"></div>
+            <div class="small ball smallball3"></div>
+            <div class="small ball smallball4"></div>
+          </div>
+  
+          <div class="small2">
+            <div class="small ball smallball5"></div>
+            <div class="small ball smallball6"></div>
+            <div class="small ball smallball7"></div>
+            <div class="small ball smallball8"></div>
+          </div>
+  
+          <div class="bigcon">
+            <div class="big ball"></div>
+          </div>
+      </div>
+  </div> `);
+  ShowProgress();
+      console.log(document.getElementById('quiz_sect_content'));
       
-      } ,2500 );
+      let funct_result =  setTimeout( ()=>{
+        console.log("INterval ==== ",time_delay);
 
-      clearTimeout(funct_result);
+        document.getElementById('loading').remove();
+        document.getElementById('accordionExample').style.opacity = '1';
+        $('body').css({
+          'overflow': 'auto'
+        });
       if( percent_score >= 70){
         img_loc = "../img/gold-trophy.jpg"
         img.setAttribute('src' ,  img_loc);
@@ -415,11 +469,12 @@ finish_btn.onclick = () => {
       inner_ele.appendChild( create_div('td' , 'td', 'td', `${incorrect_ans}`));
       // console.log(document.querySelector('.th_row'));
       console.log(document.querySelector('#result'));
-    
-      document.getElementById('finish_btn').disabled = true;
       
+      } ,time_delay );
+      
+      // clearTimeout(funct_result);
     }
-    
+
 };
   document.querySelector(".quiz_sect_content").appendChild(finish_btn);
 function check_not_attempt(){
