@@ -10,6 +10,18 @@ if(get_data !== null){
 else{
     console.log("NO html Quest in local storage");
 }
+
+// *******************************************
+$(document).ready(function() {
+    $('#example').DataTable({
+        scrollY: "40vh",
+        scrollCollapse: true,
+        scroller: true,
+        responsive: true
+    });
+
+} );
+
 html_ques = [
     {
         "id" : "1",
