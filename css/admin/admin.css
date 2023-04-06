@@ -1,4 +1,3 @@
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -99,4 +98,17 @@ div#add_btn button:focus
     border: 1px Solid #a894e9;
     background: #231281;
     box-shadow: none !important;
+}
+div#options input {
+    margin: 15px 0px;
+    box-shadow: none;
+}
+
+.modal-dialog input#html_ques,
+.modal-dialog input#ans,
+.modal button:focus,
+.modal button:active,
+.modal button:hover
+ {
+    box-shadow: none;
 }

@@ -22,6 +22,13 @@ $(document).ready(function() {
 
 } );
 
+function save_ques(){
+    
+}
+
+
+
+
 html_ques = [
     {
         "id" : "1",

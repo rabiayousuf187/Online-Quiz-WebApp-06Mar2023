@@ -92,7 +92,42 @@
       
       <div id="div_table" class="div_table">
         <div id="add_btn">
-          <button type="button" class="btn btn-primary"><i class="bi bi-plus-circle"></i>Add New</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#html_ques_modal">
+            <i class="bi bi-plus-circle"></i>Add New</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="html_ques_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="html_ques_modalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create HTML Quiz</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form method="" action="">
+                  <div class="mb-3" id="question">
+                    <label for="ques" class="form-label">Question:</label>
+                    <input name="html_ques" type="text" class="form-control" id="html_ques" placeholder="What is Your Question?">
+                  </div>
+                  <div class="mb-3" id="options">
+                    <label for="opt" class="form-label">Options:</label>
+                    <input name = "opt" type="text" class="form-control" id="opt_0" placeholder="Option 1" style="margin-top: 0px;">
+                    <input name = "opt" type="text" class="form-control" id="opt_1" placeholder="Option 2">
+                    <input name = "opt" type="text" class="form-control" id="opt_2" placeholder="Option 3">
+                    <input name = "opt" type="text" class="form-control" id="opt_3" placeholder="Option 4">
+                  </div>
+                  <div class="mb-3" id="answer">
+                    <label for="ans" class="form-label">Answer:</label>
+                    <input name = "ans" type="text" class="form-control" id="ans" placeholder="Correct Answer" style="margin-top: 0px;">
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
         </div>
         <table id="html_ques_table" class="display nowrap" style="width:100%">
           <thead>
@@ -345,6 +380,8 @@
       </div>
 
     </div>
+
+    
   </section>
 
   <section>
