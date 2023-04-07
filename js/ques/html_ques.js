@@ -1,4 +1,7 @@
-const html_ques = [
+let html_ques = [];
+let flag_insert = false;
+
+html_ques = [
     {
         "id" : "1",
         "ques" : "What do you understand by HTML?",
@@ -45,4 +48,4 @@ const html_ques = [
     }
 ];
 
-export{ html_ques };
+export{ html_ques , flag_insert };
