@@ -1,5 +1,5 @@
 console.log("HTML PAGE");
-import { html_ques } from "./ques/html_ques";
+import { html_ques , flag_insert} from "./ques/html_ques.js";
 let score = 0;
 let incorrect_ans = 0;
 let percent_score = 0;
