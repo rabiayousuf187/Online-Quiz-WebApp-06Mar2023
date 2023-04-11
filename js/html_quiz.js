@@ -1,4 +1,3 @@
-
 console.log("HTML PAGE");
 import { html_ques } from "./ques/html_ques.js";
 let score = 0;
@@ -360,14 +359,14 @@ finish_btn.onclick = () => {
   let img_loc;
   let time_delay = 1000;
   let img = create_div('img' , 'result_img', 'result_img', ``);
-
+  let color = 'green';
     console.log("finish");
     localStorage.setItem("corrct answer",score);
     check_not_attempt();
     not_attempt = 0;
     
-    percent_score = ( score / (html_ques.length * 100) ) * 100;
-    percent_score = 60;
+    percent_score = ( score / (html_ques.length * 10) ) * 100;
+    percent_score = 50;
 
     if ( not_attempt === 0){
       console.log("not_attempt  ====== 0    Inserted");
@@ -426,6 +425,7 @@ finish_btn.onclick = () => {
         img.setAttribute('title' ,  "danger");
         img.style.padding = "20px 20px";
         img.style.width = "200px";
+        color = 'red';
       }
 
       let result = document.getElementById("result");
@@ -435,7 +435,11 @@ finish_btn.onclick = () => {
       document.querySelector('.inner_text').appendChild(create_div('i','','bi bi-card-list'));
       document.querySelector('.inner_text').appendChild((create_div('h6' , 'inner_text', 'inner_text', `Number of Questions#  ${html_ques.length}`)));
       result.appendChild(create_div('h2' , 'username_style', 'username_style', `${username}`));
-      result.appendChild(img);
+
+      result.appendChild(create_div('div' , 'user_score', 'user_score', ''));
+      document.getElementById("user_score").appendChild((create_div('h1' , 'percent_score', 'percent_score', `${percent_score}%`)));
+      document.getElementById("user_score").appendChild(img);
+      document.getElementById("percent_score").style.color = color;  
       
       let inner_ele = create_div('table' , 'result_tb', 'result_tb', ``);
       inner_ele.appendChild(create_div('thead' , 'tb_head', 'tb_head', ``)).appendChild(create_div('tr' , '', 'th_row', ``));

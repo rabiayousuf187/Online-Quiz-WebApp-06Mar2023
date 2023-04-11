@@ -160,6 +160,7 @@ div#inner_text {
     justify-content: start;
     align-items: center;
     font-size: 30px;
+    border-bottom: 4px double #5ba9b7;
 }
 h6#inner_text {
     margin-bottom: 0px;
@@ -168,6 +169,10 @@ h6#inner_text {
 h2#username_style {
     font-family: 'Dancing Script', cursive;
     font-size: 55px;
+    font-size: 9vh;
+    padding: 25px 0px 0px;
+    color: #1d6470;
+
 }
 i.bi.bi-card-list {
     margin-right: 14px;
@@ -374,3 +379,18 @@ font-family: 'Noto Serif Sinhala', serif; */
     z-index:-1;
 }
 
+div#user_score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 25px 0px;
+}
+
+h1#percent_score {
+  display: flex;
+  height: 100%;
+  margin: auto 0;
+  color: green;
+  font-size: 11vh;
+  font-family: 'Noto Serif Sinhala', serif;
+}
