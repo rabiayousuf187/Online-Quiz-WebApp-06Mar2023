@@ -1,6 +1,15 @@
 let html_ques = [];
-let flag_insert = false;
-
+// let get_data = localStorage.getItem("html_ques");
+// console.log("html ques === push ",get_data)
+// if(get_data !== null){
+//     get_data = JSON.parse(get_data);
+//     console.log("html ques === push ",get_data)
+//     html_ques.push(get_data);
+//     console.log("html ques === push ",html_ques)
+// }
+// else{
+//     console.log("NO html Quest in local storage");
+// }
 html_ques = [
     {
         "id" : "1",
@@ -48,4 +57,4 @@ html_ques = [
     }
 ];
 
-export{ html_ques , flag_insert };
+export{ html_ques };
