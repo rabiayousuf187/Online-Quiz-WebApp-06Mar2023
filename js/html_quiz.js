@@ -1,5 +1,6 @@
+
 console.log("HTML PAGE");
-import { html_ques , flag_insert} from "./ques/html_ques.js";
+import { html_ques } from "./ques/html_ques.js";
 let score = 0;
 let incorrect_ans = 0;
 let percent_score = 0;
@@ -356,20 +357,20 @@ var finish_btn = create_div(
 );
 finish_btn.onclick = () => {
   
-  let location = window.location.href;
   let img_loc;
-  let time_delay = 3000;
+  let time_delay = 1000;
   let img = create_div('img' , 'result_img', 'result_img', ``);
 
     console.log("finish");
     localStorage.setItem("corrct answer",score);
     check_not_attempt();
-    // not_attempt = 0;
+    not_attempt = 0;
     
     percent_score = ( score / (html_ques.length * 100) ) * 100;
-    // percent_score = 60;
+    percent_score = 60;
 
     if ( not_attempt === 0){
+      console.log("not_attempt  ====== 0    Inserted");
       document.getElementById('finish_btn').disabled = true;
       document.getElementById('accordionExample').style.opacity = '0.2';
       document.getElementById('quiz_sect_content').insertAdjacentHTML("afterbegin" , `<div id='loading' class="loading" align="center">
@@ -394,9 +395,10 @@ finish_btn.onclick = () => {
       </div>
   </div> `);
   ShowProgress();
-      console.log(document.getElementById('quiz_sect_content'));
+      // console.log(document.getElementById('quiz_sect_content'));
       
-      let funct_result =  setTimeout( ()=>{
+      // let funct_result =  setTimeout( ()=>{
+      setTimeout( ()=>{
         console.log("INterval ==== ",time_delay);
 
         document.getElementById('loading').remove();
@@ -425,12 +427,7 @@ finish_btn.onclick = () => {
         img.style.padding = "20px 20px";
         img.style.width = "200px";
       }
-      console.log("window.location ==== ", window.location);
-      console.log("window.location ==== ", window.location.href);
-      location = location.slice(0 , window.location.href.lastIndexOf('/') + 1 )+"certificate/certificate.html";
-      console.log("updated location==== ", location);
-      // console.log("window.location ==== ", window.location.href.lastIndexOf('/')+"certificate/certificate.html");
-    
+
       let result = document.getElementById("result");
       result.style.display = "block";
       result.appendChild(create_div('h2' , 'result_heading', 'result_heading', 'Result'));
@@ -456,10 +453,12 @@ finish_btn.onclick = () => {
       inner_ele.appendChild( create_div('td' , 'td', 'td', `${incorrect_ans}`));
       // console.log(document.querySelector('.th_row'));
       console.log(document.querySelector('#result'));
+      // document.getElementById('Top').scrollTop = 0;
+      document.documentElement.scrollTop = 0;
       
       } ,time_delay );
       
-      clearTimeout(funct_result);
+      // clearTimeout(funct_result);
     }
 
 };
