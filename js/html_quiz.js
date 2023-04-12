@@ -3,9 +3,9 @@ import { html_ques } from "./ques/html_ques.js";
 let score = 0;
 let incorrect_ans = 0;
 let percent_score = 0;
-let not_attempt = 0;
+let not_attempt = html_ques.length;
 
-// console.log("HTML questiuons === ", html_ques[length-1]);
+console.log("Start now ****not_attempt === ", not_attempt);
 
 console.log("HTML questiuons === ", html_ques[0]["opt"]);
 console.log("HTML questiuons === ", html_ques[0]["opt"][1]);
