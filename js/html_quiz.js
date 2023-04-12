@@ -470,6 +470,7 @@ finish_btn.onclick = () => {
 function check_not_attempt(){
   let un_answer;
   let ind = 0;
+  // not_attempt = 0;
   let div_id;
   console.log("html_ques.length ====== ", html_ques.length);
 
@@ -484,14 +485,14 @@ function check_not_attempt(){
         console.log(`danger${div_id}`);
         if(document.getElementById(`non_sele_danger${div_id}`) === null){
           alert_show("Invalid Answer! Please Select atleast One Option", `non_sele_danger${div_id}` , "danger", `#show_alert-${div_id}`) ;
-          not_attempt++;
+          not_attempt;
           // return not_attempt;
         }
         else if(document.getElementById(`non_sele_danger${div_id}`) !== null){
-         not_attempt;
+          not_attempt;
         }
         else {
-          not_attempt;
+          not_attempt++;
         }
       }
       // not_attempt === 0 all are attempt
