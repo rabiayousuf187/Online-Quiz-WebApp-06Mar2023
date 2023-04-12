@@ -368,7 +368,7 @@ finish_btn.onclick = () => {
     percent_score = ( score / (html_ques.length * 10) ) * 100;
     // percent_score = 50;
 
-    if ( not_attempt === 0){
+    if ( not_attempt === 0 ){
       console.log("not_attempt  ====== 0    Inserted");
       document.getElementById('finish_btn').disabled = true;
       document.getElementById('accordionExample').style.opacity = '0.2';
@@ -463,6 +463,18 @@ finish_btn.onclick = () => {
       } ,time_delay );
       
       // clearTimeout(funct_result);
+    }
+    else{
+      console.log("Show Trigger ==== ",not_attempt);
+      // const toastTrigger = document.getElementById('liveToastBtn');
+      const toastLiveExample = document.getElementById('liveToast');
+      // if (toastTrigger) {
+        // toastTrigger.addEventListener('click', () => {
+          const toast = new bootstrap.Toast(toastLiveExample);
+          toast.show();
+          console.log("Warning ======= ",toast.show());
+        // });
+      // }
     }
 
 };

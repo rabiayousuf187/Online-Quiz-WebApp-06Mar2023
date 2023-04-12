@@ -53,7 +53,21 @@
     </section>
 
     <section id="quiz_section" class="quiz_section">
+      <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
       <div class="container">
+        <div class="toast-container position-fixed end-0 top-17 p-4">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <i class="bi bi-exclamation-circle-fill"></i>
+              <strong class="me-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              Hello, world! This is a toast message.
+            </div>
+          </div>
+        </div>
         <div id="quiz_sect_content" class="quiz_sect_content">
           <div id = "result" class="result"></div>
           <div class="row">            

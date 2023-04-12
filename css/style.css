@@ -394,3 +394,14 @@ h1#percent_score {
   font-size: 11vh;
   font-family: 'Noto Serif Sinhala', serif;
 }
+
+.toast-container {
+  top: 5rem;
+}
+.toast-header {
+  color: #201f1f;
+  background-color: #ffc300bd;
+}
+i.bi.bi-exclamation-circle-fill {
+  padding-right: 5px;
+}
