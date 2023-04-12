@@ -9,10 +9,7 @@ console.log("Start now ****not_attempt === ", not_attempt);
 
 console.log("HTML questiuons === ", html_ques[0]["opt"]);
 console.log("HTML questiuons === ", html_ques[0]["opt"][1]);
-function finish(){
-  console.log("score ==== ",score);
-  // localStorage.setItem("total_score",score);
-}
+
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ", quiz_data);
 let username = quiz_data.username;
@@ -466,15 +463,9 @@ finish_btn.onclick = () => {
     }
     else{
       console.log("Show Trigger ==== ",not_attempt);
-      // const toastTrigger = document.getElementById('liveToastBtn');
       const toastLiveExample = document.getElementById('liveToast');
-      // if (toastTrigger) {
-        // toastTrigger.addEventListener('click', () => {
-          const toast = new bootstrap.Toast(toastLiveExample);
-          toast.show();
-          console.log("Warning ======= ",toast.show());
-        // });
-      // }
+      const toast = new bootstrap.Toast(toastLiveExample);
+      toast.show();
     }
 
 };
