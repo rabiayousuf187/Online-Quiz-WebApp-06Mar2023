@@ -7,12 +7,40 @@ console.log("current_url main === ",current_url);
 current_url = current_url.href.substring( 0, current_url.href.lastIndexOf("/") );
 console.log("current_url === ", current_url);
 
-let quiz_data = localStorage.getItem("");
-console.log("Start === ",quiz_data);
+// console.log("username === ", quiz_data);
+console.log("Start === Quiz");
+setInterval( ()=>{
+    console.log("setInterval");
+    inp_username.style.border = "none";
+    alert_danger.style.display = "none";
+    username = localStorage.getItem("quiz_data"); 
+    console.log(username);
+    username === null ? Unauth() : start_Quiz(); 
 
-username = localStorage.getItem("quiz_data");
-console.log("username === ",quiz_data);
-// localStorage.removeItem(quiz_data)
+} , 5000);
+
+// inp_username.style.border = "none";
+//     alert_danger.style.display = "none";
+
+
+function start_Quiz(){
+    console.log("auth User");
+    start();
+    
+}
+
+function Unauth(){
+    console.log("Unauth User");
+    setTimeout( ()=>{
+        inp_username.style.border = "3px solid red";
+        alert_danger.style.display = "block";
+        alert_danger.innerHTML = "Please Enter Username to Start Quiz";
+    }, 2000);
+    // clearTimeout(styleDisplay);
+
+    console.log("clearTimeout(styleDisplay) Unauth");
+
+}
 
 function start(){
     console.log("Start Quiz ====== ");
@@ -28,8 +56,8 @@ function start(){
         console.log("quiz_data === ",quiz_data);
         localStorage.setItem("quiz_data",quiz_data)
         window.location.replace(current_url + "/pages/quiz.html")
-    
-
+        
+        
     }
     else{
         inp_username.style.border = "3px solid red";
@@ -41,9 +69,3 @@ function start(){
     // alert_danger.style.display = "none";
     
 }
-
-// localStorage.removeItem("quiz_data")
-// // localStorage.setItem("quiz_data", "")
-// if( username == ""){
-
-// }

@@ -45,4 +45,6 @@ let html_ques = [
     }
 ];
 
-export{ html_ques };
+html_ques =  JSON.parse(localStorage.getItem("quiz_data")) !== null? html_ques : null;
+console.log("export page html_ques === ", html_ques);
+export {html_ques}
