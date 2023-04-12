@@ -15,7 +15,7 @@ setInterval( ()=>{
     alert_danger.style.display = "none";
     username = localStorage.getItem("quiz_data"); 
     console.log(username);
-    username === null ? Unauth() : start_Quiz(); 
+    username !== null ? start_Quiz(): Unauth() ; 
 
 } , 5000);
 
@@ -25,6 +25,7 @@ setInterval( ()=>{
 
 function start_Quiz(){
     console.log("auth User");
+    // window.location.replace(current_url + "/pages/quiz.html")
     start();
     
 }
@@ -45,7 +46,7 @@ function Unauth(){
 function start(){
     console.log("Start Quiz ====== ");
     username = inp_username.value;
-    if( username !== ""){
+    // if( username !== ""){
         inp_username.style.border = "none";
         alert_danger.style.display = "none";
         quiz_data = {
@@ -58,14 +59,12 @@ function start(){
         window.location.replace(current_url + "/pages/quiz.html")
         
         
-    }
-    else{
-        inp_username.style.border = "3px solid red";
-        alert_danger.style.display = "block";
-        alert_danger.innerHTML = "Please Enter Username to Start Quiz";
-    }
+    // }
+    // else{
+    //     inp_username.style.border = "3px solid red";
+    //     alert_danger.style.display = "block";
+    //     alert_danger.innerHTML = "Please Enter Username to Start Quiz";
+    // }
     
-    // inp_username.style.border = "none";
-    // alert_danger.style.display = "none";
     
 }
