@@ -147,7 +147,7 @@ let html_ques = [
         "ques" : "Which of the following is an example of a new attribute in HTML5 used for making a form input field required?",
         "opt" : [
                     `required="true"`,
-                    `required="required",`
+                    `required="required"`,
                     `mandatory="true"`,
                     `mandatory="required"`,
                 ],
