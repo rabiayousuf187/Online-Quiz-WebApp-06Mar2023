@@ -17,15 +17,11 @@ setInterval( ()=>{
     console.log(username);
     username !== null ? start_Quiz(): Unauth() ; 
 
-} , 5000);
-
-// inp_username.style.border = "none";
-//     alert_danger.style.display = "none";
-
+} , 100);  
+//5000 to 100
 
 function start_Quiz(){
     console.log("auth User");
-    // window.location.replace(current_url + "/pages/quiz.html")
     start();
     
 }
@@ -56,15 +52,6 @@ function start(){
         quiz_data = JSON.stringify(quiz_data);
         console.log("quiz_data === ",quiz_data);
         localStorage.setItem("quiz_data",quiz_data)
-        window.location.replace(current_url + "/pages/quiz.html")
-        
-        
-    // }
-    // else{
-    //     inp_username.style.border = "3px solid red";
-    //     alert_danger.style.display = "block";
-    //     alert_danger.innerHTML = "Please Enter Username to Start Quiz";
-    // }
-    
+        window.location.replace(current_url + "/pages/quiz.html");
     
 }
