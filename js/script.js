@@ -1,4 +1,4 @@
-let username = "";
+let username;
 let inp_username = document.getElementById("username");
 let alert_danger = document.getElementById("alert_danger");
 let current_url = window.location;
