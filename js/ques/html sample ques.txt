@@ -1,0 +1,149 @@
+What is the latest version of HTML?
+a) HTML 4
+b) HTML 5
+c) HTML 6
+d) HTML 7
+Answer: b) HTML 5
+
+Which of the following is not a new feature in HTML5?
+a) Canvas
+b) Audio and video support
+c) New semantic elements
+d) XML syntax
+Answer: d) XML syntax
+
+What is the purpose of the <canvas> element in HTML5?
+a) To create interactive graphics and animations
+b) To define a section of a web page
+c) To play audio and video content
+d) To create forms and input elements
+Answer: a) To create interactive graphics and animations
+
+Which of the following is not a semantic element in HTML5?
+a) <header>
+b) <article>
+c) <div>
+d) <footer>
+Answer: c) <div>
+
+Which of the following is an example of a self-closing tag in HTML5?
+a) <div></div>
+b) <img src="image.jpg">
+c) <p>Paragraph text</p>
+d) <a href="https://www.example.com">Link</a>
+Answer: b) <img src="image.jpg">
+
+What is the purpose of the <video> element in HTML5?
+a) To display text content
+b) To display images
+c) To play audio content
+d) To play video content
+Answer: d) To play video content
+
+Which of the following is an example of a new form input type in HTML5?
+a) <input type="text">
+b) <input type="password">
+c) <input type="email">
+d) <input type="radio">
+Answer: c) <input type="email">
+
+Which of the following is the correct syntax for an ordered list in HTML5?
+a) <ol><li>Item 1</ol></li>
+b) <ol><li>Item 1</li></ol>
+c) <li><ol>Item 1</ol></li>
+d) <li><ol>Item 1</li></ol>
+Answer: b) <ol><li>Item 1</li></ol>
+
+Which of the following is an example of a new semantic element in HTML5?
+a) <table>
+b) <nav>
+c) <form>
+d) <span>
+Answer: b) <nav>
+
+Which of the following is the correct syntax for embedding an audio file in HTML5?
+a) <audio src="audio.mp3" type="audio/mp3">
+b) <audio src="audio.mp3" type="audio/mpeg">
+c) <audio src="audio.wav" type="audio/wav">
+d) <audio src="audio.ogg" type="audio/ogg">
+Answer: d) <audio src="audio.ogg" type="audio/ogg">
+
+
+
+
+rabiayousuf987@gmail.com
+more
+Sure, here are some additional HTML5 MCQ questions with answers:
+
+Which of the following is an example of a new semantic element in HTML5 used for grouping together links to other pages or to parts within the current page?
+a) <nav>
+b) <section>
+c) <header>
+d) <footer>
+Answer: a) <nav>
+
+What is the purpose of the <datalist> element in HTML5?
+a) To define a list of predefined options for a form input field
+b) To display a table of data
+c) To define a section of a web page
+d) To play audio and video content
+Answer: a) To define a list of predefined options for a form input field
+
+Which of the following is an example of a new form input type in HTML5 used for selecting a date and time?
+a) <input type="text">
+b) <input type="password">
+c) <input type="date">
+d) <input type="radio">
+Answer: c) <input type="date">
+
+Which of the following is an example of a new form input type in HTML5 used for selecting a range of values?
+a) <input type="text">
+b) <input type="password">
+c) <input type="range">
+d) <input type="radio">
+Answer: c) <input type="range">
+
+Which of the following is an example of a new attribute in HTML5 used for making a form input field required?
+a) required="true"
+b) required="required"
+c) mandatory="true"
+d) mandatory="required"
+Answer: b) required="required"
+
+Which of the following is an example of a new attribute in HTML5 used for specifying the maximum value allowed in a form input field?
+a) max="10"
+b) maximum="10"
+c) limit="10"
+d) upper="10"
+Answer: a) max="10"
+
+Which of the following is an example of a new attribute in HTML5 used for specifying a placeholder text in a form input field?
+a) placeholder="Enter your text here"
+b) text="Enter your text here"
+c) input="Enter your text here"
+d) value="Enter your text here"
+Answer: a) placeholder="Enter your text here"
+
+Which of the following is an example of a new attribute in HTML5 used for making a link open in a new window or tab?
+a) href="http://www.example.com" target="_new"
+b) href="http://www.example.com" target="_blank"
+c) href="http://www.example.com" target="_window"
+d) href="http://www.example.com" target="_tab"
+Answer: b) href="http://www.example.com" target="_blank"
+
+Which of the following is an example of a new attribute in HTML5 used for specifying the source of an external script file?
+a) src="script.js"
+b) script="script.js"
+c) external="script.js"
+d) file="script.js"
+Answer: a) src="script.js"
+
+Which of the following is an example of a new attribute in HTML5 used for specifying the width and height of an image?
+a) size="100x100"
+b) width="100" height="100"
+c) dimensions="100,100"
+d) style="width:100px;height:100px;"
+Answer: b) width="100" height="100"
+
+
+
