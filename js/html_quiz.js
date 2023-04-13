@@ -2,9 +2,6 @@ import { html_ques } from "./ques/html_ques.js";
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ", quiz_data);
 
-
-
-
 /// IF username is not entered
 if (( quiz_data !== null ) ){
   console.log("HTML PAGE");
