@@ -17,7 +17,7 @@ setInterval( ()=>{
     console.log(username);
     username !== null ? start_Quiz(): Unauth() ; 
 
-} , 100);  
+} , 500);  
 //5000 to 100
 
 function start_Quiz(){
