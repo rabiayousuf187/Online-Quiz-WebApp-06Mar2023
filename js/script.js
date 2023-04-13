@@ -17,8 +17,8 @@ setInterval( ()=>{
     console.log(username);
     username !== null ? start_Quiz(): Unauth() ; 
 
-} , 500);  
-//5000 to 500
+} , 1000);  
+//5000 to 1000
 
 function start_Quiz(){
     console.log("auth User");
