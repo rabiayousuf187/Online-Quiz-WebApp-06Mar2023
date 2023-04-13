@@ -61,27 +61,6 @@ c) <form>
 d) <span>
 Answer: b) <nav>
 
-Which of the following is the correct syntax for embedding an audio file in HTML5?
-a) <audio src="audio.mp3" type="audio/mp3">
-b) <audio src="audio.mp3" type="audio/mpeg">
-c) <audio src="audio.wav" type="audio/wav">
-d) <audio src="audio.ogg" type="audio/ogg">
-Answer: d) <audio src="audio.ogg" type="audio/ogg">
-
-
-
-
-rabiayousuf987@gmail.com
-more
-Sure, here are some additional HTML5 MCQ questions with answers:
-
-Which of the following is an example of a new semantic element in HTML5 used for grouping together links to other pages or to parts within the current page?
-a) <nav>
-b) <section>
-c) <header>
-d) <footer>
-Answer: a) <nav>
-
 What is the purpose of the <datalist> element in HTML5?
 a) To define a list of predefined options for a form input field
 b) To display a table of data
