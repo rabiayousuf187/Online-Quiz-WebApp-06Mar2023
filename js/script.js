@@ -6,7 +6,8 @@ console.log("current_url main === ",current_url);
 // let parse = current_url.href.lastIndexOf("/");
 current_url = current_url.href.substring( 0, current_url.href.lastIndexOf("/") );
 console.log("current_url === ", current_url);
-
+username = localStorage.getItem("quiz_data"); 
+    console.log(username);
 // console.log("username === ", quiz_data);
 console.log("Start === Quiz");
 setInterval( ()=>{
@@ -15,10 +16,17 @@ setInterval( ()=>{
     alert_danger.style.display = "none";
     username = localStorage.getItem("quiz_data"); 
     console.log(username);
-    username !== null ? start_Quiz(): Unauth() ; 
+    username !== null ? console.log("not null"): console.log("null");
+    // username !== null ? start_Quiz(): Unauth(); 
+    if (( username.username !== null ) && ( username.username !== "" )){
+        start_Quiz(username.username);
+    }
+    else{
+        Unauth()
+    }
 
-} , 1500);  
-//5000 to 1000
+} , 3000);  
+
 
 function start_Quiz(){
     console.log("auth User");
@@ -32,16 +40,17 @@ function Unauth(){
         inp_username.style.border = "3px solid red";
         alert_danger.style.display = "block";
         alert_danger.innerHTML = "Please Enter Username to Start Quiz";
-    }, 2000);
+    }, 1500);
     // clearTimeout(styleDisplay);
 
     console.log("clearTimeout(styleDisplay) Unauth");
 
 }
 
-function start(){
+function start(username = inp_username.value){
     console.log("Start Quiz ====== ");
-    username = inp_username.value;
+    username = username;
+    console.log("Start username == ",username)
     // if( username !== ""){
         inp_username.style.border = "none";
         alert_danger.style.display = "none";
