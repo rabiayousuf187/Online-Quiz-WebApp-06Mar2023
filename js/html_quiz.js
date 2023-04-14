@@ -1,9 +1,39 @@
 import { html_ques } from "./ques/html_ques.js";
-let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
-console.log("QUIZ DATA +++ ", quiz_data);
 
-/// IF username is not entered
-if (( quiz_data !== null ) ){
+document.getElementById("Top").style.display = "none";
+let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
+console.log("QUIZ DATA +++ ",quiz_data);
+
+let username = quiz_data.username;
+console.log("username ==== ",username);
+
+setInterval( ()=>{
+    quiz_data = localStorage.getItem("quiz_data"); 
+    quiz_data = JSON.parse(quiz_data);
+    console.log("quiz_data ==== ",quiz_data);
+    
+    username = quiz_data.username;
+    console.log("username ==== ",username);
+
+    // username !== null ? start_Quiz(): Unauth(); 
+    if (( username === "" ) || ( username === null )){
+      console.log("username empty or null ==== ",username);
+      Unauth();
+  }
+} , 2000); 
+
+  // username !== null ? start_Quiz(): Unauth(); 
+  if (( username === "" ) || ( username === null )){
+      console.log("username empty or null ==== ",username);
+      Unauth();
+  }
+  else{
+      console.log("username ==== ",username);
+      Auth();
+  }
+// clearInterval();
+function Auth(){
+  document.getElementById("Top").style.display = "block";
   console.log("HTML PAGE");
   let score = 0;
   let incorrect_ans = 0;
@@ -14,9 +44,6 @@ if (( quiz_data !== null ) ){
 
   console.log("HTML questiuons === ", html_ques[0]["opt"]);
   console.log("HTML questiuons === ", html_ques[0]["opt"][1]);
-
-  let username = quiz_data.username;
-  console.log("QUIZ DATA +++ ", username);
 
   let banner_heading = document.getElementById("banner_heading");
   banner_heading.style.fontSize = "40px";
@@ -510,7 +537,7 @@ if (( quiz_data !== null ) ){
     }; 
   }
 }
-else{
+function Unauth(){
   document.getElementById("Top").style.display = "none";
   let current_url = window.location;
   console.log("current_url main === ",current_url);

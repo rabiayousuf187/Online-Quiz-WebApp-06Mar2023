@@ -1,4 +1,4 @@
-let username;
+console.log("Home Page");
 let inp_username = document.getElementById("username");
 let alert_danger = document.getElementById("alert_danger");
 let current_url = window.location;
@@ -7,7 +7,12 @@ console.log("current_url main === ",current_url);
 current_url = current_url.href.substring( 0, current_url.href.lastIndexOf("/") );
 console.log("current_url === ", current_url);
 
-console.log("Start === Quiz");
+let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
+console.log("QUIZ DATA +++ ",quiz_data);
+
+let username = quiz_data.username;
+console.log("username ==== ",username);
+
 setInterval( ()=>{
     console.log("setInterval");
     inp_username.style.border = "none";
@@ -21,18 +26,22 @@ setInterval( ()=>{
     username = quiz_data.username;
     console.log("username ==== ",username);
     
-    // username !== null ? start_Quiz(): Unauth(); 
     if (( username === "" ) || ( username === null )){
         console.log("username empty or null ==== ",username);
         Unauth();
     }
-    else{
-        console.log("username ==== ",username);
-        start_Quiz(username);
-    }
-
+    
 } , 3000);  
 
+// username !== null ? start_Quiz(): Unauth(); 
+if (( username === "" ) || ( username === null )){
+    console.log("username empty or null ==== ",username);
+    Unauth();
+}
+else{
+    console.log("username ==== ",username);
+    start_Quiz(username);
+}
 
 function start_Quiz(username){
     console.log("auth User");
