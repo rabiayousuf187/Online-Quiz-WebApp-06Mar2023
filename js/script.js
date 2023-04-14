@@ -6,32 +6,39 @@ console.log("current_url main === ",current_url);
 // let parse = current_url.href.lastIndexOf("/");
 current_url = current_url.href.substring( 0, current_url.href.lastIndexOf("/") );
 console.log("current_url === ", current_url);
-username = localStorage.getItem("quiz_data"); 
-    console.log(username);
-// console.log("username === ", quiz_data);
+
 console.log("Start === Quiz");
 setInterval( ()=>{
     console.log("setInterval");
     inp_username.style.border = "none";
     alert_danger.style.display = "none";
-    username = localStorage.getItem("quiz_data"); 
-    console.log(username);
-    username !== null ? console.log("not null"): console.log("null");
+    let quiz_data = localStorage.getItem("quiz_data"); 
+
+    console.log("quiz_data ==== ", quiz_data);
+    quiz_data = JSON.parse(quiz_data);
+    console.log("quiz_data ==== ",quiz_data);
+
+    username = quiz_data.username;
+    console.log("username ==== ",username);
+    
     // username !== null ? start_Quiz(): Unauth(); 
-    if (( username.username !== null ) && ( username.username !== "" )){
-        start_Quiz(username.username);
+    if (( username === "" ) || ( username === null )){
+        console.log("username empty or null ==== ",username);
+        Unauth();
     }
     else{
-        Unauth()
+        console.log("username ==== ",username);
+        start_Quiz(username);
     }
 
 } , 3000);  
 
 
-function start_Quiz(){
+function start_Quiz(username){
     console.log("auth User");
-    start();
-    
+    console.log("start_Quiz usernam === ",username);
+
+    start(username);
 }
 
 function Unauth(){

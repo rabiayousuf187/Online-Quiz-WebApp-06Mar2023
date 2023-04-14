@@ -1,17 +1,25 @@
-
+let username;
+document.getElementById("Top").style.display = "none";
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ",quiz_data);
 
 setInterval( ()=>{
-    username = localStorage.getItem("quiz_data"); 
-    console.log(username);
-    username !== null ? console.log("not null"): console.log("null");
+    quiz_data = localStorage.getItem("quiz_data"); 
+    quiz_data = JSON.parse(quiz_data);
+    console.log("quiz_data ==== ",quiz_data);
+    
+    username = quiz_data.username;
+    console.log("username ==== ",username);
+
     // username !== null ? start_Quiz(): Unauth(); 
-    if (( username.username !== null ) && ( username.username !== "" )){
-        Auth();
+    if (( username === "" ) || ( username === null )){
+        console.log("username empty or null ==== ",username);
+        Unauth();
     }
     else{
-        Unauth()
+        
+        console.log("username ==== ",username);
+        Auth();
     }
 } , 3000);  
 
@@ -22,6 +30,9 @@ function Auth(){
     let banner_heading = document.getElementById("banner_heading");
     banner_heading.style.fontSize = "40px";
     banner_heading.innerHTML = "Welcome " + username + "!";
+    setTimeout( ()=>{
+        document.getElementById("Top").style.display = "block";
+    } ,10 );
 }
 function Unauth(){
     document.getElementById("Top").style.display = "none";
