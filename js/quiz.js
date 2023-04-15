@@ -3,7 +3,7 @@ let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ",quiz_data);
 
 
-let username = quiz_data.username;
+let username;
 console.log("username ==== ",username);
 
 setInterval( ()=>{
@@ -14,18 +14,19 @@ setInterval( ()=>{
     username = quiz_data.username;
     console.log("username ==== ",username);
 
-    if (( username === "" ) || ( username === null )){
+    if (( quiz_data === null ) || ( username === "" ) || ( username === null )){
         console.log("username empty or null ==== ",username);
         Unauth();
     }
     // username !== null ? start_Quiz(): Unauth(); 
 } , 3000);  
 
-if (( username === "" ) || ( username === null )){
+if (( quiz_data === null ) || ( username === "" ) || ( username === null )){
     console.log("username empty or null ==== ",username);
     Unauth();
 }
 else{
+    username = quiz_data.username;
     console.log("username ==== ",username);
     Auth();
 }

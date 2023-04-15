@@ -10,9 +10,20 @@ console.log("current_url === ", current_url);
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ",quiz_data);
 
-let username = quiz_data.username;
+let username;
 console.log("username ==== ",username);
 
+// username !== null ? start_Quiz(): Unauth(); 
+if ((quiz_data === null ) || ( quiz_data.username === "" ) || ( quiz_data.username === null )){
+    console.log("username empty or null ==== ");
+    Unauth();
+}
+else{
+    username = quiz_data.username;
+    console.log("username ==== ",username);
+    console.log("username ==== ",username);
+    start_Quiz(username);
+}
 setInterval( ()=>{
     console.log("setInterval");
     inp_username.style.border = "none";
@@ -22,26 +33,14 @@ setInterval( ()=>{
     console.log("quiz_data ==== ", quiz_data);
     quiz_data = JSON.parse(quiz_data);
     console.log("quiz_data ==== ",quiz_data);
-
-    username = quiz_data.username;
-    console.log("username ==== ",username);
-    
-    if (( username === "" ) || ( username === null )){
+ 
+    if (( quiz_data === null ) || ( quiz_data.username === "" ) || ( quiz_data.username === null )){
         console.log("username empty or null ==== ",username);
         Unauth();
     }
     
 } , 3000);  
 
-// username !== null ? start_Quiz(): Unauth(); 
-if (( username === "" ) || ( username === null )){
-    console.log("username empty or null ==== ",username);
-    Unauth();
-}
-else{
-    console.log("username ==== ",username);
-    start_Quiz(username);
-}
 
 function start_Quiz(username){
     console.log("auth User");
