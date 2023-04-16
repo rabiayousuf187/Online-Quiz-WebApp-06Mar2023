@@ -61,7 +61,7 @@ let css_ques = [
     {
         id: "10",
         ques: "Which property is used to create columns in CSS3?",
-        opt: [`column-count``column-gap`, `column-width`, `all of the above`],
+        opt: [`column-count`,`column-gap`, `column-width`, `all of the above`],
         ans: `all of the above`,
     },
     {
