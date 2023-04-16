@@ -45,6 +45,14 @@ function Auth(){
     setTimeout( ()=>{
         document.getElementById("Top").style.display = "block";
     } ,10 );
+
+    let signout_button = document.getElementById('signout');
+    signout_button.onclick = ()=>  { signout() };
+
+    function signout(){
+            console.log("Signout");
+            localStorage.clear();
+    }
 }
 function Unauth(){
     document.getElementById("Top").style.display = "none";

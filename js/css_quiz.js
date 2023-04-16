@@ -55,6 +55,14 @@ function Auth(){
 
   let img = document.getElementById("banner_img");
   img.src = "../img/css.png";
+  
+  let signout_button = document.getElementById('signout');
+    signout_button.onclick = ()=>  { signout() };
+
+  function signout(){
+        console.log("Signout");
+        localStorage.clear();
+  }
 
   function create_div(ele, id, cls, ele_name) {
     const element = document.createElement(ele);
