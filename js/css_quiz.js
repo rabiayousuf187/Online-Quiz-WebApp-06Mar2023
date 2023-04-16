@@ -51,10 +51,10 @@ function Auth(){
 
   let banner_heading = document.getElementById("banner_heading");
   banner_heading.style.fontSize = "40px";
-  banner_heading.innerHTML = "HTML Online Quiz";
+  banner_heading.innerHTML = "CSS3 Online Quiz";
 
   let img = document.getElementById("banner_img");
-  img.src = "../img/html.png";
+  img.src = "../img/css.png";
 
   function create_div(ele, id, cls, ele_name) {
     const element = document.createElement(ele);
