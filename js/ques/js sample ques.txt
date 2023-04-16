@@ -1,0 +1,184 @@
+Which of the following is not a primitive data type in JavaScript?
+a) Boolean
+b) String
+c) Number
+d) Object
+Answer: d) Object
+
+What is the output of the following code: console.log(3 + 4 + "5");
+a) 125
+b) "345"
+c) "75"
+d) 12
+Answer: b) "345"
+
+Which of the following operators has the highest precedence in JavaScript?
+a) Assignment operator (=)
+b) Ternary operator (? :)
+c) Logical AND (&&)
+d) Addition operator (+)
+Answer: b) Ternary operator (? :)
+
+What is the output of the following code: console.log(Math.floor(Math.random() * 10));
+a) A random number between 0 and 10 (inclusive)
+b) A random number between 0 and 9 (inclusive)
+c) A random number between 1 and 10 (inclusive)
+d) A random number between 1 and 9 (inclusive)
+Answer: b) A random number between 0 and 9 (inclusive)
+
+Which of the following is not a looping statement in JavaScript?
+a) for
+b) while
+c) do-while
+d) repeat
+Answer: d) repeat
+
+What is the output of the following code: console.log(typeof typeof undefined);
+a) "undefined"
+b) "string"
+c) "object"
+d) "number"
+Answer: b) "string"
+
+Which of the following is not a valid type of function in JavaScript?
+a) Anonymous function
+b) Arrow function
+c) Named function
+d) Mixed function
+Answer: d) Mixed function
+
+What is the output of the following code: console.log(2 ** 3 ** 2);
+a) 512
+b) 64
+c) 9
+d) 8
+Answer: b) 64
+
+Which of the following methods converts a string to an array?
+a) toFixed()
+b) toLowerCase()
+c) split()
+d) reverse()
+Answer: c) split()
+
+What is the output of the following code: console.log(+"3" + 4 - "2");
+a) 4
+b) 3
+c) 5
+d) "54"
+Answer: c) 5
+
+Which of the following is not a valid way to declare a variable in JavaScript?
+a) var
+b) const
+c) let
+d) int
+Answer: d) int
+
+What is the output of the following code: console.log(Boolean("false"));
+a) false
+b) true
+c) NaN
+d) undefined
+Answer: b) true
+
+Which of the following methods removes the last element from an array and returns that element?
+a) slice()
+b) splice()
+c) push()
+d) pop()
+Answer: d) pop()
+
+What is the output of the following code: console.log(0.1 + 0.2 === 0.3);
+a) true
+b) false
+c) NaN
+d) undefined
+Answer: b) false
+
+Which of the following is not a valid JavaScript event handler?
+a) onclick
+b) onsubmit
+c) onkeydown
+d) ondragstart
+Answer: d) ondragstart
+
+What is the output of the following code: console.log(typeof NaN);
+a) "number"
+b) "string"
+c) "undefined"
+d) "object"
+Answer: a) "number"
+
+/////////////////// Array and string
+Which of the following methods adds one or more elements to the end of an array and returns the new length of the array?
+a) splice()
+b) unshift()
+c) push()
+d) shift()
+Answer: c) push()
+
+What is the output of the following code: console.log("hello".charAt(1));
+a) "e"
+b) "h"
+c) "l"
+d) "o"
+Answer: c) "e"
+
+Which of the following methods returns a new array with all the elements of the original array that pass a certain test?
+a) map()
+b) reduce()
+c) filter()
+d) slice()
+Answer: c) filter()
+
+What is the output of the following code: console.log("hello".replace("l", "L"));
+a) "Hello"
+b) "helLo"
+c) "heLLo"
+d) "helo"
+Answer: a) "HeLlo"
+
+Which of the following methods returns a new array consisting of the elements of the original array joined together with a specified separator?
+a) map()
+b) reduce()
+c) join()
+d) slice()
+Answer: c) join()
+
+What is the output of the following code: console.log([1, 2, 3].indexOf(2));
+a) 1
+b) 2
+c) 3
+d) -1
+Answer: a) 1
+
+Which of the following methods sorts the elements of an array in place and returns the sorted array?
+a) sort()
+b) reverse()
+c) splice()
+d) shift()
+Answer: a) sort()
+
+What is the output of the following code: console.log("hello world".split(" "));
+a) ["hello", "world"]
+b) ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
+c) ["hello", "world", ""]
+d) ["hello", "world", undefined]
+Answer: a) ["hello", "world"]
+
+Which of the following methods returns a new array with the first element removed?
+a) unshift()
+b) shift()
+c) slice()
+d) splice()
+Answer: b) shift()
+
+What is the output of the following code: console.log("hello".toUpperCase());
+a) "hello"
+b) "HELLo"
+c) "HELLO"
+d) "H"
+Answer: c) "HELLO"
+
+
