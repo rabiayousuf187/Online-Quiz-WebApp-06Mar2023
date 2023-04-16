@@ -51,7 +51,7 @@ function Auth(){
 
   let banner_heading = document.getElementById("banner_heading");
   banner_heading.style.fontSize = "40px";
-  banner_heading.innerHTML = "HTML Online Quiz";
+  banner_heading.innerHTML = "HTML5 Online Quiz";
 
   let img = document.getElementById("banner_img");
   img.src = "../img/html.png";
