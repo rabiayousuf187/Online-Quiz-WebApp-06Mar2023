@@ -39,7 +39,6 @@ else{
 // clearInterval();
 function Auth(){
   console.log("CSS PAGE");
-  localStorage.setItem("selected_page","css_quiz");
   let score = 0;
   let incorrect_ans = 0;
   let percent_score = 0;
@@ -299,6 +298,7 @@ function Auth(){
         console.log("not_attempt ==== ", not_attempt);
 
         score +=10;
+        localStorage.setItem("css_correct_answer",score);
         console.log('Correct Answer!', sel_ans);
         console.log('score ===== !', score);
         document.getElementById(`score-text-${id}`).innerHTML =  '10/10';
@@ -401,7 +401,8 @@ function Auth(){
     let img = create_div('img' , 'result_img', 'result_img', ``);
     let color = 'green';
       console.log("finish");
-      localStorage.setItem("corrct_answer",score);
+      score = JSON.parse(localStorage.getItem("css_correct_answer"));
+      console.log("final SCore == ", score);
       check_not_attempt();
       // not_attempt = 0;
       
@@ -470,7 +471,8 @@ function Auth(){
 
         let result = document.getElementById("result");
         result.style.display = "block";
-        result.appendChild(create_div('h2' , 'result_heading', 'result_heading', 'Result'));
+        result.appendChild(create_div('h2' , 'result_heading', 'result_heading', 'Online CSS3 Quiz'));
+        result.appendChild(create_div('h3' , '', 'result_heading', 'Result'));
         result.appendChild(create_div('div' , 'inner_text', 'inner_text', ''));
         document.querySelector('.inner_text').appendChild(create_div('i','','bi bi-card-list'));
         document.querySelector('.inner_text').appendChild((create_div('h6' , 'inner_text', 'inner_text', `Number of Questions#  ${css_ques.length}`)));
