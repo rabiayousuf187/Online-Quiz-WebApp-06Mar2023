@@ -27,6 +27,9 @@ nav.navbar.navbar-expand-lg.bg-dark {
 nav.navbar a, .nav-link{
     color: #ededed !important;
 }
+button .nav-link{
+  background-color: none;
+}
 .content {
     display: flex;
     justify-content: center;
