@@ -1,128 +1,202 @@
-What is the latest version of HTML?
-a) HTML 4
-b) HTML 5
-c) HTML 6
-d) HTML 7
-Answer: b) HTML 5
+Which property is used to add a background color to an element in CSS3?
+a) background-image
+b) background-color
+c) background-repeat
+d) background-size
+Answer: b) background-color
 
-Which of the following is not a new feature in HTML5?
-a) Canvas
-b) Audio and video support
-c) New semantic elements
-d) XML syntax
-Answer: d) XML syntax
+Which CSS3 property is used to create rounded corners on elements?
+a) border-radius
+b) border-color
+c) border-width
+d) border-style
+Answer: a) border-radius
 
-What is the purpose of the <canvas> element in HTML5?
-a) To create interactive graphics and animations
-b) To define a section of a web page
-c) To play audio and video content
-d) To create forms and input elements
-Answer: a) To create interactive graphics and animations
+Which CSS3 property is used to create a shadow effect?
+a) text-shadow
+b) box-shadow
+c) border-shadow
+d) element-shadow
+Answer: b) box-shadow
 
-Which of the following is not a semantic element in HTML5?
-a) <header>
-b) <article>
-c) <div>
-d) <footer>
-Answer: c) <div>
+Which property is used to add an underline to text in CSS3?
+a) text-decoration
+b) text-transform
+c) text-shadow
+d) text-color
+Answer: a) text-decoration
 
-Which of the following is an example of a self-closing tag in HTML5?
-a) <div></div>
-b) <img src="image.jpg">
-c) <p>Paragraph text</p>
-d) <a href="https://www.example.com">Link</a>
-Answer: b) <img src="image.jpg">
+Which CSS3 property is used to change the size of a font?
+a) font-weight
+b) font-style
+c) font-size
+d) font-family
+Answer: c) font-size
 
-What is the purpose of the <video> element in HTML5?
-a) To display text content
-b) To display images
-c) To play audio content
-d) To play video content
-Answer: d) To play video content
+Which property is used to make text bold in CSS3?
+a) font-weight
+b) font-style
+c) font-size
+d) font-family
+Answer: a) font-weight
 
-Which of the following is an example of a new form input type in HTML5?
-a) <input type="text">
-b) <input type="password">
-c) <input type="email">
-d) <input type="radio">
-Answer: c) <input type="email">
+Which CSS3 property is used to add a transition effect to an element?
+a) transition
+b) animation
+c) transform
+d) transition-effect
+Answer: a) transition
 
-Which of the following is the correct syntax for an ordered list in HTML5?
-a) <ol><li>Item 1</ol></li>
-b) <ol><li>Item 1</li></ol>
-c) <li><ol>Item 1</ol></li>
-d) <li><ol>Item 1</li></ol>
-Answer: b) <ol><li>Item 1</li></ol>
+Which property is used to change the color of text in CSS3?
+a) text-color
+b) color
+c) font-color
+d) background-color
+Answer: b) color
 
-Which of the following is an example of a new semantic element in HTML5?
-a) <table>
-b) <nav>
-c) <form>
-d) <span>
-Answer: b) <nav>
+Which CSS3 property is used to align an element vertically?
+a) vertical-align
+b) align-items
+c) justify-content
+d) align-content
+Answer: a) vertical-align
 
-What is the purpose of the <datalist> element in HTML5?
-a) To define a list of predefined options for a form input field
-b) To display a table of data
-c) To define a section of a web page
-d) To play audio and video content
-Answer: a) To define a list of predefined options for a form input field
+Which property is used to create columns in CSS3?
+a) column-count
+b) column-gap
+c) column-width
+d) all of the above
+Answer: d) all of the above
 
-Which of the following is an example of a new form input type in HTML5 used for selecting a date and time?
-a) <input type="text">
-b) <input type="password">
-c) <input type="date">
-d) <input type="radio">
-Answer: c) <input type="date">
+Which CSS3 property is used to add a gradient effect to an element?
+a) gradient
+b) background-gradient
+c) linear-gradient
+d) radial-gradient
+Answer: c) linear-gradient
 
-Which of the following is an example of a new form input type in HTML5 used for selecting a range of values?
-a) <input type="text">
-b) <input type="password">
-c) <input type="range">
-d) <input type="radio">
-Answer: c) <input type="range">
+Which property is used to make an element transparent in CSS3?
+a) opacity
+b) visibility
+c) display
+d) position
+Answer: a) opacity
 
-Which of the following is an example of a new attribute in HTML5 used for making a form input field required?
-a) required="true"
-b) required="required"
-c) mandatory="true"
-d) mandatory="required"
-Answer: b) required="required"
+Which CSS3 property is used to add a border to an element?
+a) border-color
+b) border-width
+c) border-style
+d) all of the above
+Answer: d) all of the above
 
-Which of the following is an example of a new attribute in HTML5 used for specifying the maximum value allowed in a form input field?
-a) max="10"
-b) maximum="10"
-c) limit="10"
-d) upper="10"
-Answer: a) max="10"
+Which property is used to make text uppercase in CSS3?
+a) text-transform
+b) text-decoration
+c) text-shadow
+d) text-color
+Answer: a) text-transform
 
-Which of the following is an example of a new attribute in HTML5 used for specifying a placeholder text in a form input field?
-a) placeholder="Enter your text here"
-b) text="Enter your text here"
-c) input="Enter your text here"
-d) value="Enter your text here"
-Answer: a) placeholder="Enter your text here"
+Which CSS3 property is used to add a shadow to text?
+a) text-shadow
+b) box-shadow
+c) border-shadow
+d) element-shadow
+Answer: a) text-shadow
 
-Which of the following is an example of a new attribute in HTML5 used for making a link open in a new window or tab?
-a) href="http://www.example.com" target="_new"
-b) href="http://www.example.com" target="_blank"
-c) href="http://www.example.com" target="_window"
-d) href="http://www.example.com" target="_tab"
-Answer: b) href="http://www.example.com" target="_blank"
+Which property is used to change the spacing between lines of text in CSS3?
+a) line-height
+b) text-height
+c) font-height
+d) letter-spacing
+Answer: a) line-height
 
-Which of the following is an example of a new attribute in HTML5 used for specifying the source of an external script file?
-a) src="script.js"
-b) script="script.js"
-c) external="script.js"
-d) file="script.js"
-Answer: a) src="script.js"
+Which CSS3 property is used to add a background image to an element?
+a) background-image
+b) background-color
+c) background-repeat
+d) background-size
+Answer: a) background-image
 
-Which of the following is an example of a new attribute in HTML5 used for specifying the width and height of an image?
-a) size="100x100"
-b) width="100" height="100"
-c) dimensions="100,100"
-d) style="width:100px;height:100px;"
-Answer: b) width="100" height="100"
+Which property is used to create an italicized font in CSS3?
+a) font-style
+b) font-weight
+c) font-size
+d) font-family
+
+
+***********************************
+FLex Question
+What is the default value of the flex-direction property in CSS Flexbox?
+a) row
+b) row-reverse
+c) column
+d) column-reverse
+Answer: a) row
+
+Which property is used to set the spacing between flex items in CSS Flexbox?
+a) flex-basis
+b) flex-wrap
+c) justify-content
+d) gap
+Answer: d) gap
+
+Which CSS Flexbox property is used to set the flex-grow value of a flex item?
+a) flex
+b) flex-grow
+c) flex-shrink
+d) flex-basis
+Answer: b) flex-grow
+
+Which property is used to align flex items along the cross-axis in CSS Flexbox?
+a) justify-content
+b) align-items
+c) align-content
+d) flex-wrap
+Answer: b) align-items
+
+Which CSS Flexbox property is used to set the order of a flex item?
+a) order
+b) flex-grow
+c) flex-shrink
+d) flex-basis
+Answer: a) order
+
+Which property is used to align multiple lines of flex items along the cross-axis in CSS Flexbox?
+a) align-items
+b) justify-content
+c) align-content
+d) flex-wrap
+Answer: c) align-content
+
+Which CSS Flexbox property is used to set the flex-shrink value of a flex item?
+a) flex
+b) flex-grow
+c) flex-shrink
+d) flex-basis
+Answer: c) flex-shrink
+
+Which property is used to set the width of a flex container in CSS Flexbox?
+a) width
+b) height
+c) flex-wrap
+d) flex-direction
+Answer: a) width
+
+Which CSS Flexbox property is used to set the flex-basis value of a flex item?
+a) flex
+b) flex-grow
+c) flex-shrink
+d) flex-basis
+Answer: d) flex-basis
+
+Which property is used to align a single flex item along the cross-axis in CSS Flexbox?
+a) align-items
+b) justify-content
+c) align-content
+d) none of the above
+Answer: d) none of the above (use align-self)
+
+
 
 
 

@@ -1,230 +1,142 @@
 let css_ques = [
-    {
-        "id" : "1",
-        "ques" : "What do you understand by HTML?",
-        "opt" : [
-                "HTML describes the structure of a webpage",
-                "HTML is the standard markup language mainly used to create web pages",
-                "HTML consists of a set of elements that helps the browser how to view the content",
-                "All of the above"
-            ],
-        "ans" : "All of the above",
-    },
-    {
-        "id" : "2",
-        "ques" : "What is the latest version of HTML?",
-        "opt" : [
-                "HTML 4",
-                "HTML 5",
-                "HTML 6",
-                "HTML 7"
-                ],
-        "ans" : "HTML 5",
-    },
-    {
-        "id" : "3",
-        "ques" : "Which of the following is not a new feature in HTML5?",
-        "opt" : [
-                    "Canvas",
-                    "Audio and video support",
-                    "New semantic elements",
-                    "XML syntax"
-                ],
-        "ans" : "XML syntax",
-    },
-    {
-        "id" : "4",
-        "ques" : "What is the purpose of the <canvas> element in HTML5?",
-        "opt" : [
-                    "To create interactive graphics and animations",
-                    "To define a section of a web page",
-                    "To play audio and video content",
-                    "To create forms and input elements"
-                ],
-        "ans" : "To create interactive graphics and animations",
-    },
-    {
-        "id" : "5",
-        "ques" : "Which of the following is not a semantic element in HTML5?",
-        "opt" : [
-                    "<header>",
-                    "<article>",
-                    "<div>",
-                    "<footer>",
-                ],
-        "ans" : "<div>",
-    },
-    {
-        "id" : "6",
-        "ques" : "Which of the following is an example of a self-closing tag in HTML5?",
-        "opt" : [
-                    "<div></div>",
-                    `<img src="image.jpg">`,
-                    "<p>Paragraph text</p>",
-                    `<a href="https://www.example.com">Link</a>`,
-                ],
-        "ans" : `<img src="image.jpg">`,
-    },
-    {
-        "id" : "7",
-        "ques" : "What is the purpose of the <video> element in HTML5?",
-        "opt" : [
-                    "To display text content",
-                    "To display images",
-                    "To play audio content",
-                    "To play video content"
-                ],
-        "ans" : "To play video content",
-    },
-    {
-        "id" : "8",
-        "ques" : "Which of the following is an example of a new form input type in HTML5?",
-        "opt" : [
-                    `<input type="text">`,
-                    `<input type="password">`,
-                    `<input type="email">`,
-                    `<input type="radio">`
-                ],
-        "ans" : `<input type="email">`,
-    },
-    {
-        "id" : "9",
-        "ques" : "Which of the following is the correct syntax for an ordered list in HTML5?",
-        "opt" : [
-                    "<ol><li>Item 1</ol></li>",
-                    "<ol><li>Item 1</li></ol>",
-                    "<li><ol>Item 1</ol></li>",
-                    "<li><ol>Item 1</li></ol>"
-                ],
-        "ans" : "<ol><li>Item 1</li></ol>",
-    },
-    {
-        "id" : "10",
-        "ques" : "Which of the following is an example of a new semantic element in HTML5?",
-        "opt" : [
-                    "<table>",
-                    "<nav>",
-                    "<form>",
-                    "<span>",
-                ],
-        "ans" : "<nav>",
-    },
-    {
-        "id" : "11",
-        "ques" : "What is the purpose of the <datalist> element in HTML5?",
-        "opt" : [
-                    "To define a list of predefined options for a form input field",
-                    "To display a table of data",
-                    "To define a section of a web page",
-                    "To play audio and video content"
-                ],
-        "ans" : "To define a list of predefined options for a form input field",
-    },
-    {
-        "id" : "12",
-        "ques" : "Which of the following is an example of a new form input type in HTML5 used for selecting a date and time?",
-        "opt" : [
-                    `<input type="text">`,
-                    `<input type="password">`,
-                    `<input type="date">`,
-                    `<input type="radio">`
-                ],
-        "ans" : `<input type="date">`,
-    },
-    {
-        "id" : "13",
-        "ques" : "Which of the following is an example of a new form input type in HTML5 used for selecting a range of values?",
-        "opt" : [
-                    `<input type="text">`,
-                    `<input type="password">`,
-                    `<input type="range">`,
-                    `<input type="radio">`
-                ],
-        "ans" : `<input type="range">`,
-    },
-    {
-        "id" : "14",
-        "ques" : "Which of the following is an example of a new attribute in HTML5 used for making a form input field required?",
-        "opt" : [
-                    `required="true"`,
-                    `required="required"`,
-                    `mandatory="true"`,
-                    `mandatory="required"`,
-                ],
-        "ans" : `required="required",`,
-    },
-    {
-        "id" : "15",
-        "ques" : "Which of the following is an example of a new attribute in HTML5 used for specifying the maximum value allowed in a form input field?",
-        "opt" : [
-                    `max="10"`,
-                    `maximum="10"`,
-                    `limit="10"`,
-                    `upper="10"`
-                ],
-        "ans" : `max="10"`,
-    },
-    {
-        "id" : "16",
-        "ques" : "Which of the following is an example of a new attribute in HTML5 used for specifying a placeholder text in a form input field?",
-        "opt" : [
-                    `placeholder="Enter your text here"`,
-                    `text="Enter your text here"`,
-                    `input="Enter your text here"`,
-                    `value="Enter your text here"`
-                ],
-        "ans" : `placeholder="Enter your text here"`,
-    },
-    {
-        "id" : "17",
-        "ques" : "Which of the following is an example of a new attribute in HTML5 used for making a link open in a new window or tab?",
-        "opt" : [
-                    `href="http://www.example.com" target="_new"`,
-                    `href="http://www.example.com" target="_blank"`,
-                    `href="http://www.example.com" target="_window"`,
-                    `href="http://www.example.com" target="_tab"`
-                ],
-        "ans" : `href="http://www.example.com" target="_blank"`,
-    },
-    {
-        "id" : "18",
-        "ques" : "Which of the following is an example of a new attribute in HTML5 used for specifying the source of an external script file?",
-        "opt" : [
-                    `src="script.js"`,
-                    `script="script.js"`,
-                    `external="script.js"`,
-                    `file="script.js"`
-                ],
-        "ans" : `src="script.js"`,
-    },
-    {
-        "id" : "19",
-        "ques" : "Which of the following is an example of a new attribute in HTML5 used for specifying the width and height of an image?",
-        "opt" : [
-                    `size="100x100"`,
-                    `width="100" height="100"`,
-                    `dimensions="100,100"`,
-                    `style="width:100px;height:100px;"`
-                ],
-        "ans" : `width="100" height="100"`,
-    },
-    {
-        "id" : "20",
-        "ques" : "Which of the following is an example of a new element in HTML5 used for defining a figure with a caption?",
-        "opt" : [
-                    `<img>`,
-                    `<figure>`,
-                    `<caption>`,
-                    ` <figcaption>`
-                ],
-        "ans" : `<figure>`,
-    },
-        
-        
-        
-        
+  {
+    id: "1",
+    ques: "Which property is used to add a background color to an element in CSS3?",
+    opt: [
+      `background-image`,
+      `background-color`,
+      `background-repeat`,
+      `background-size`,
+    ],
+    ans: `background-color`,
+  },
+  {
+    id: "2",
+    ques: "Which CSS3 property is used to create rounded corners on elements?",
+    opt: [`border-radius`, `border-color`, `border-width  `, `border-style`],
+    ans: `border-radius`,
+  },
+  {
+    id: "3",
+    ques: "Which CSS3 property is used to create a shadow effect?",
+    opt: [`text-shadow`, `box-shadow`, `border-shadow``element-shadow`],
+    ans: `box-shadow`,
+  },
+  {
+    id: "4",
+    ques: "Which property is used to add an underline to text in CSS3?",
+    opt: [`text-decoration`, `text-transform`, `text-shadow`, `text-color`],
+    ans: `text-decoration`,
+  },
+  {
+    id: "5",
+    ques: "Which CSS3 property is used to change the size of a font?",
+    opt: [`font-weight`, `font-style`, `font-size`, `font-family`],
+    ans: `font-size`,
+  },
+  {
+    id: "6",
+    ques: "Which property is used to make text bold in CSS3?",
+    opt: [`font-weight`, `font-style`, `font-size`, `font-family`],
+    ans: `font-weight`,
+  },
+  {
+    id: "7",
+    ques: "Which CSS3 property is used to add a transition effect to an element?",
+    opt: [`transition`, `animation`, `transform`, `transition-effect`],
+    ans: `transition`,
+  },
+  {
+    id: "8",
+    ques: "Which property is used to change the color of text in CSS3?",
+    opt: [`text-color`, `color`, `font-color`, `background-color`],
+    ans: `color`,
+  },
+  {
+    id: "9",
+    ques: "Which CSS3 property is used to align an element vertically?",
+    opt: [`vertical-align`, `align-items`, `justify-content`, `align-content`],
+    ans: `vertical-align`,
+  },
+  {
+    id: "10",
+    ques: "Which property is used to create columns in CSS3?",
+    opt: [`column-count``column-gap`, `column-width`, `all of the above`],
+    ans: `all of the above`,
+  },
+  {
+    id: "11",
+    ques: "Which CSS3 property is used to add a gradient effect to an element?",
+    opt: [
+      `gradient`,
+      `background-gradient`,
+      `linear-gradient`,
+      `radial-gradient`,
+    ],
+    ans: `linear-gradient`,
+  },
+  {
+    id: "12",
+    ques: "Which property is used to make an element transparent in CSS3?",
+    opt: [`opacity`, `visibility`, `display`, `position`],
+    ans: `opacity`,
+  },
+  {
+    id: "13",
+    ques: "Which CSS3 property is used to add a border to an element?",
+    opt: [`border-color`, `border-width`, `border-style`, `all of the above`],
+    ans: `all of the above`,
+  },
+  {
+    id: "14",
+    ques: "Which property is used to make text uppercase in CSS3?",
+    opt: [`text-transform`, `text-decoration`, `text-shadow`, `text-color`],
+    ans: `text-transform`,
+  },
+  {
+    id: "15",
+    ques: "What is the default value of the flex-direction property in CSS Flexbox?",
+    opt: [`row`, `row-reverse`, `column`, `column-reverse`],
+    ans: `row`,
+  },
+  {
+    id: "16",
+    ques: "Which CSS Flexbox property is used to set the flex-grow value of a flex item?",
+    opt: [`flex`, `flex-grow`, `flex-shrink`, `flex-basis`],
+    ans: `flex-grow`,
+  },
+  {
+    id: "17",
+    ques: "Which CSS Flexbox property is used to set the order of a flex item?",
+    opt: [`order`, `flex-grow`, `flex-shrink`, `flex-basis`],
+    ans: `order`,
+  },
+  {
+    id: "18",
+    ques: "Which property is used to set the width of a flex container in CSS Flexbox?",
+    opt: [`width`, `height`, `flex-wrap`, `flex-direction`],
+    ans: `width`,
+  },
+  {
+    id: "19",
+    ques: "Which CSS Flexbox property is used to set the flex-basis value of a flex item?",
+    opt: [`order`, `flex-grow`, `flex-shrink`, `flex-basis`],
+    ans: `flex-basis`,
+  },
+  {
+    id: "20",
+    ques: "Which property is used to align a single flex item along the cross-axis in CSS Flexbox?",
+    opt: [
+      `align-items`,
+      `justify-content`,
+      `align-content`,
+      `none of the above`,
+    ],
+    ans: `none of the above`,
+  },
 ];
 
-css_ques =  JSON.parse(localStorage.getItem("quiz_data")) !== null? css_ques : null;
+css_ques =
+  JSON.parse(localStorage.getItem("quiz_data")) !== null ? css_ques : null;
 console.log("export page css_ques === ", css_ques);
-export {css_ques}
+export { css_ques };

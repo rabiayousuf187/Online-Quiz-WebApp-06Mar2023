@@ -1,5 +1,5 @@
 document.getElementById("Top").style.display = "none";
-import { html_ques } from "./ques/css_ques.js";
+import { css_ques } from "./ques/css_ques.js";
 let username;
 let empty = false;
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
@@ -42,12 +42,12 @@ function Auth(){
   let score = 0;
   let incorrect_ans = 0;
   let percent_score = 0;
-  let not_attempt = html_ques.length;
+  let not_attempt = css_ques.length;
 
   console.log("Start now ****not_attempt === ", not_attempt);
 
-  console.log("HTML questiuons === ", html_ques[0]["opt"]);
-  console.log("HTML questiuons === ", html_ques[0]["opt"][1]);
+  console.log("HTML questiuons === ", css_ques[0]["opt"]);
+  console.log("HTML questiuons === ", css_ques[0]["opt"][1]);
 
   let banner_heading = document.getElementById("banner_heading");
   banner_heading.style.fontSize = "40px";
@@ -69,7 +69,7 @@ function Auth(){
     return element;
   }
 
-  html_ques.map((ele, index) => {
+  css_ques.map((ele, index) => {
     console.log("index ===== ", ele, index++);
 
     let indexCapText = capitalize(convertNumberToEnglish(index));
@@ -396,7 +396,7 @@ function Auth(){
       check_not_attempt();
       // not_attempt = 0;
       
-      percent_score = ( score / (html_ques.length * 10) ) * 100;
+      percent_score = ( score / (css_ques.length * 10) ) * 100;
       // percent_score = 50;
 
       if ( not_attempt === 0 ){
@@ -464,7 +464,7 @@ function Auth(){
         result.appendChild(create_div('h2' , 'result_heading', 'result_heading', 'Result'));
         result.appendChild(create_div('div' , 'inner_text', 'inner_text', ''));
         document.querySelector('.inner_text').appendChild(create_div('i','','bi bi-card-list'));
-        document.querySelector('.inner_text').appendChild((create_div('h6' , 'inner_text', 'inner_text', `Number of Questions#  ${html_ques.length}`)));
+        document.querySelector('.inner_text').appendChild((create_div('h6' , 'inner_text', 'inner_text', `Number of Questions#  ${css_ques.length}`)));
         result.appendChild(create_div('h2' , 'username_style', 'username_style', `${username}`));
 
         result.appendChild(create_div('div' , 'user_score', 'user_score', ''));
@@ -483,7 +483,7 @@ function Auth(){
 
         document.getElementById('result_tb').appendChild(create_div('tbody' , 'tb_tbody', 'tb_body', ``)).appendChild(create_div('tr' , '', 'th_row2', ``));
         inner_ele = document.querySelector('.th_row2')
-        inner_ele.appendChild( create_div('td' , 'td', 'td', `${html_ques.length}`));
+        inner_ele.appendChild( create_div('td' , 'td', 'td', `${css_ques.length}`));
         inner_ele.appendChild( create_div('td' , 'td', 'td', `${score}`));
         inner_ele.appendChild( create_div('td' , 'td', 'td', `${incorrect_ans}`));
         // console.log(document.querySelector('.th_row'));
@@ -509,9 +509,9 @@ function Auth(){
     let ind = 0;
     // not_attempt = 0;
     let div_id;
-    console.log("html_ques.length ====== ", html_ques.length);
+    console.log("css_ques.length ====== ", css_ques.length);
 
-      for( ind ;  ind < html_ques.length ; ind++){
+      for( ind ;  ind < css_ques.length ; ind++){
         div_id = 1 + ind;
         document.getElementById(`form${div_id}`)
         console.log("Form no ===== ", `form${div_id}`);
