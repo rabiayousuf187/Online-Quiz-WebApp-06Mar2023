@@ -1,5 +1,5 @@
 document.getElementById("Top").style.display = "none";
-import { html_ques } from "./ques/html_ques.js";
+import { html_ques } from "./ques/css_ques.js";
 let username;
 let empty = false;
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
