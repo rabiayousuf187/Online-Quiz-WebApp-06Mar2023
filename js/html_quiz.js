@@ -5,10 +5,10 @@ let empty = false;
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ",quiz_data);
 
-if( quiz_data !== null ){
+if( ( quiz_data !== null ) ){
     empty = true;
 }
-  
+
 setInterval( ()=>{
     quiz_data = localStorage.getItem("quiz_data");
     quiz_data !== null ? (empty = true,quiz_data = JSON.parse(quiz_data), username = quiz_data.username): (empty = false, username = null);
@@ -38,6 +38,7 @@ else{
 }
 // clearInterval();
 function Auth(){
+  localStorage.setItem("selected_page","html_quiz");
   console.log("HTML PAGE");
   let score = 0;
   let incorrect_ans = 0;

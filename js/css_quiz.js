@@ -38,7 +38,8 @@ else{
 }
 // clearInterval();
 function Auth(){
-  console.log("HTML PAGE");
+  console.log("CSS PAGE");
+  localStorage.setItem("selected_page","css_quiz");
   let score = 0;
   let incorrect_ans = 0;
   let percent_score = 0;
