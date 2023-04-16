@@ -392,7 +392,7 @@ function Auth(){
     let img = create_div('img' , 'result_img', 'result_img', ``);
     let color = 'green';
       console.log("finish");
-      localStorage.setItem("corrct answer",score);
+      localStorage.setItem("corrct_answer",score);
       check_not_attempt();
       // not_attempt = 0;
       
