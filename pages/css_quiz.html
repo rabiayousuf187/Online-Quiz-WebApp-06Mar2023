@@ -6,27 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QMS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Serif+Sinhala:wght@400;600&display=swap" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="../css/style.css"/>
 </head>
-<body>
-    <section class="banner">
+<body id="Top">
+    <section class="banner" style="background-position: top;">
         <div class="container-fluid">
             <div>
                 <nav class="navbar navbar-expand-lg bg-dark">
                     <div class="container">
-                      <a class="navbar-brand" href="../index.html">QMS</a>
+                      <a class="navbar-brand" href="../index.html">QWA</a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                       </button>
                       <div class="collapse navbar-collapse" id="navbarScroll">
                         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                          <!-- <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                          </li> -->
                           <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="./html_quiz.html">HTML</a>
+                            <a class="nav-link active" href="./html_quiz.html">HTML</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#">CSS</a>
@@ -35,28 +39,59 @@
                             <a class="nav-link disabled">JS</a>
                           </li>
                         </ul>
-                        <form class="d-flex" role="search">
-                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
                       </div>
                     </div>
                   </nav>
             </div>
             <div class="content quiz_page">
                 <div class="banner-heading">
+                    <img id="banner_img"/>
                     <h1 id="banner_heading"></h1>
-                    <h1>Quiz Management System</h1>
-                    <p>
-                        Revolutionize your educational institution with our Quiz Management System. Create, administer, and grade quizzes effortlessly. Enhance student engagement and performance. Request a demo now!
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="quiz_section" class="quiz_section">
+      <div class="container">
+        <div class="toast-container position-fixed end-0 top-17 p-4">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <i class="bi bi-exclamation-diamond-fill"></i>
+              <strong class="me-auto">Bootstrap</strong>
+              <small>11 mins ago</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              Some Questions are not attempted.
+            </div>
+          </div>
+        </div>
+        <div id="quiz_sect_content" class="quiz_sect_content">
+          <div id = "result" class="result"></div>
+          <div class="row">            
+            <div class="accordion" id="accordionExample">
+            </div>
+          </div>
+          
+          <!-- <button type="button" class="btn btn-success" id="show-btn" onclick="showing()">Show Answer</button> -->
+        </div>
+      </div>
+
+    </section>
+<!-- <script>
+  function showing(){
+    alert("Teststsygsj");
+  }
+  </script> -->
+
+    <script src="../js/html_quiz.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js" integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+    <!-- <script src="../js/app.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
