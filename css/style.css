@@ -6,6 +6,9 @@
     padding: 0;
     margin: 0;
 }
+#Top{
+  display: none;
+}
 .banner {
     background: linear-gradient(64deg, #1e252c, #0c0f1c6e),url(https://wallpaperaccess.com/full/1947484.jpg);
     height: 100%;

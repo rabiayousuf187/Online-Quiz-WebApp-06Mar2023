@@ -1,38 +1,34 @@
-let empty = false;
-import { html_ques } from "./ques/html_ques.js";
 document.getElementById("Top").style.display = "none";
-
+import { html_ques } from "./ques/html_ques.js";
+let username;
+let empty = false;
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ",quiz_data);
+
 if( quiz_data !== null ){
-  empty = true;
+    empty = true;
 }
-
-
-let username;
-console.log("username ==== ",username);
-
+  
 setInterval( ()=>{
-    quiz_data = localStorage.getItem("quiz_data"); 
-    if( quiz_data !== null ){
-      empty = true;
-    }
+    quiz_data = localStorage.getItem("quiz_data");
+    quiz_data !== null ? (empty = true,quiz_data = JSON.parse(quiz_data), username = quiz_data.username): (empty = false, username = null);
 
-    quiz_data = JSON.parse(quiz_data);
     console.log("quiz_data ==== ",quiz_data);
-    
-    username = quiz_data.username;
+    console.log("QUIZ DATA is not empty ",empty);
     console.log("username ==== ",username);
+    
+    // username = quiz_data.username;
 
-    if (( empty === false ) || ( username === "" ) || ( username === null )){
-        console.log("username empty or null ==== ",username);
-        Unauth();
-    }
+      if ( ( empty === false ) && ( username === "" ) || ( username === null ) ){
+            console.log("QUIZ DATA is not empty ",empty);
+            // console.log("username empty or null ==== ",username);
+            Unauth();
+      }
     // username !== null ? start_Quiz(): Unauth(); 
 } , 3000);  
 
-if (( empty === null ) || ( username === "" ) || ( username === null )){
-    console.log("username empty or null ==== ",username);
+if ( ( empty === false ) || ( username === "" ) || ( username === null ) ){
+    // console.log("username empty or null ==== ",username);
     Unauth();
 }
 else{
@@ -42,7 +38,6 @@ else{
 }
 // clearInterval();
 function Auth(){
-  document.getElementById("Top").style.display = "block";
   console.log("HTML PAGE");
   let score = 0;
   let incorrect_ans = 0;
@@ -545,9 +540,12 @@ function Auth(){
         console.log("not_attempt ==== ", not_attempt);
     }; 
   }
+  setTimeout( ()=>{
+    document.getElementById("Top").style.display = "block";
+} ,2000 );
 }
 function Unauth(){
-  document.getElementById("Top").style.display = "none";
+  // document.getElementById("Top").style.display = "none";
   let current_url = window.location;
   console.log("current_url main === ",current_url);
   // let parse = current_url.href.lastIndexOf("/");

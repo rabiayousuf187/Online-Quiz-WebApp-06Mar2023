@@ -1,19 +1,15 @@
 console.log("Home Page");
+let username;
 let inp_username = document.getElementById("username");
 let alert_danger = document.getElementById("alert_danger");
-let current_url = window.location;
-console.log("current_url main === ",current_url);
-// let parse = current_url.href.lastIndexOf("/");
-current_url = current_url.href.substring( 0, current_url.href.lastIndexOf("/") );
-console.log("current_url === ", current_url);
-
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ",quiz_data);
 
-let username;
-console.log("username ==== ",username);
+let current_url = window.location;
+console.log("current_url main === ",current_url);
+current_url = current_url.href.substring( 0, current_url.href.lastIndexOf("/") );
+console.log("current_url === ", current_url);
 
-// username !== null ? start_Quiz(): Unauth(); 
 if ((quiz_data === null ) || ( quiz_data.username === "" ) || ( quiz_data.username === null )){
     console.log("username empty or null ==== ");
     Unauth();
@@ -28,11 +24,8 @@ setInterval( ()=>{
     console.log("setInterval");
     inp_username.style.border = "none";
     alert_danger.style.display = "none";
-    let quiz_data = localStorage.getItem("quiz_data"); 
-
-    console.log("quiz_data ==== ", quiz_data);
-    quiz_data = JSON.parse(quiz_data);
-    console.log("quiz_data ==== ",quiz_data);
+    
+    quiz_data = JSON.parse(localStorage.getItem("quiz_data"));     console.log("quiz_data ==== ", quiz_data);
  
     if (( quiz_data === null ) || ( quiz_data.username === "" ) || ( quiz_data.username === null )){
         console.log("username empty or null ==== ",username);
@@ -45,7 +38,6 @@ setInterval( ()=>{
 function start_Quiz(username){
     console.log("auth User");
     console.log("start_Quiz usernam === ",username);
-
     start(username);
 }
 
