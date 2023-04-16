@@ -1,8 +1,12 @@
+let empty = false;
 import { html_ques } from "./ques/html_ques.js";
-
 document.getElementById("Top").style.display = "none";
+
 let quiz_data = JSON.parse(localStorage.getItem("quiz_data"));
 console.log("QUIZ DATA +++ ",quiz_data);
+if( quiz_data !== null ){
+  empty = true;
+}
 
 
 let username;
@@ -10,20 +14,24 @@ console.log("username ==== ",username);
 
 setInterval( ()=>{
     quiz_data = localStorage.getItem("quiz_data"); 
+    if( quiz_data !== null ){
+      empty = true;
+    }
+
     quiz_data = JSON.parse(quiz_data);
     console.log("quiz_data ==== ",quiz_data);
     
     username = quiz_data.username;
     console.log("username ==== ",username);
 
-    if (( quiz_data === null ) || ( username === "" ) || ( username === null )){
+    if (( empty === false ) || ( username === "" ) || ( username === null )){
         console.log("username empty or null ==== ",username);
         Unauth();
     }
     // username !== null ? start_Quiz(): Unauth(); 
 } , 3000);  
 
-if (( quiz_data === null ) || ( username === "" ) || ( username === null )){
+if (( empty === null ) || ( username === "" ) || ( username === null )){
     console.log("username empty or null ==== ",username);
     Unauth();
 }
