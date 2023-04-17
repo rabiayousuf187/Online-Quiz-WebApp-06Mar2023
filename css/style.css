@@ -48,7 +48,8 @@ button .nav-link{
     align-items: center;
 }
 .banner-heading h1 {
-    font-size: 95px;
+    /* font-size: 95px; */
+    font-size: 5vw;
 }
 .banner-heading p {
     margin: 25px 0px;
