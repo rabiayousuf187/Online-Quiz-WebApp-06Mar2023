@@ -50,7 +50,7 @@ function Auth(){
   console.log("HTML questiuons === ", css_ques[0]["opt"][1]);
 
   let banner_heading = document.getElementById("banner_heading");
-  banner_heading.style.fontSize = "40px";
+  //banner_heading.style.fontSize = "40px";
   banner_heading.innerHTML = "CSS3 Online Quiz";
 
   let img = document.getElementById("banner_img");

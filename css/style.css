@@ -421,13 +421,29 @@ h1#percent_score {
 
 /* Resolution small <576 */
 /* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+/* @media (min-width: 576px) { 
+ 
+} */
 @media (max-width: 575.98px) { 
   .banner-heading div.d-flex{
     width: 100%;
   }
   .banner-heading h1 {
     font-size: 7vw;
+  }
+  h1#banner_heading .quiz_heading{
+    font-size: 4vw;
+  }
+  /* img.css_logo {
+      width: 18vw;
+      height: 18vw;
+  } */
+  img#banner_img {
+    width: 16vw;
+    height: 16vw;
 }
+
+
  }
  @media (min-width: 576px) and (max-width:992px) { 
 
@@ -437,4 +453,5 @@ h1#percent_score {
   .banner-heading p {
     padding: 0px 5vw;
 }
- }
+ } 
+ 
