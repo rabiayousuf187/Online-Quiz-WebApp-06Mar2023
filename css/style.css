@@ -459,6 +459,12 @@ span.score-text {
   padding: 6px 2px;
   border-radius: 50%;
 }
+h2#result_heading {
+  font-size: 7vw;
+}
+h3.result_heading {
+font-size: 6vw;
+}
 
  }
  @media (min-width: 576px) and (max-width:992px) { 
