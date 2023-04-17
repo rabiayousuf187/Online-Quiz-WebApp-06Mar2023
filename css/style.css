@@ -90,6 +90,7 @@ section.quiz_section {
     /* align-items: center; */
     /* display: flex; */
     margin-top: 15%;
+    /* width: 135px; */
 }
 
 .quiz_sect_content .row {
