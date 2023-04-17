@@ -38,7 +38,7 @@ button .nav-link{
     
 }
 .banner-heading {
-    width: 65%;
+    width: 60vw;
     color: whitesmoke;
     text-align: center;
     display: flex;
@@ -54,7 +54,8 @@ button .nav-link{
 .banner-heading p {
     margin: 25px 0px;
     font-size: 18px;
-    padding: 0px 15%;
+    /* padding: 0px 15%; */
+    padding: 0px 3vw;
 }
 .banner-heading div.d-flex {
     justify-content: center;
@@ -416,3 +417,23 @@ h1#percent_score {
 .bi-exclamation-diamond-fill {
   padding-right: 5px;
 }
+
+/* Resolution small <576 */
+/* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+  .banner-heading div.d-flex{
+    width: 100%;
+  }
+  .banner-heading h1 {
+    font-size: 7vw;
+}
+ }
+ @media (min-width: 576px) and (max-width:992px) { 
+
+  .banner-heading h1 {
+    font-size: 6vw;
+  }
+  .banner-heading p {
+    padding: 0px 5vw;
+}
+ }
