@@ -124,6 +124,7 @@ button.accordion-button {
     /* background: #2e2d66 !important; */
     background: #168599b3 !important;
     color: white !important;
+    font-size: 3vw;
 }
 .ques-submit {
     float: right;
@@ -442,7 +443,22 @@ h1#percent_score {
     width: 16vw;
     height: 16vw;
 }
-
+section.quiz_section {
+  margin: 100px 5px;
+}
+button.accordion-button, .accordion  {
+  font-size: 3vw;
+}
+span.score-text {
+  /* width: 150px; */
+  /* position: absolute; */
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  background: #120b89;
+  padding: 6px 2px;
+  border-radius: 50%;
+}
 
  }
  @media (min-width: 576px) and (max-width:992px) { 
