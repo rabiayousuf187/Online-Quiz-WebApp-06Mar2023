@@ -146,6 +146,8 @@ span.score-text {
     /* width: 150px; */
     position: absolute;
     right: 90px;
+    z-index: 50;
+
 }
 .accordion-button {
     justify-content: flex-end;
@@ -453,6 +455,7 @@ h1#percent_score {
     height: 23px;
     background: #120b89;
     padding: 3px 1.5%;
+    
   }
 }
 @media (min-width: 320px) and (max-width: 480px) { 
