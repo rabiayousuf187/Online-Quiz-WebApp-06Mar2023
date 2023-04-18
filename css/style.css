@@ -439,6 +439,9 @@ h1#percent_score {
 600dp: 7” tablet (600x1024 mdpi)
 720dp: 10” tablet (720x1280 mdpi, 800x1280 mdpi, etc.) */
 @media (max-width: 320px) { 
+  .banner-heading div.d-flex {
+    width: 100%;
+}
   button.accordion-button{
     font-size: 50%;
 }
@@ -479,9 +482,7 @@ h1#percent_score {
   tr.th_row2 {
     padding-left: 15px;
 }
-.banner-heading div.d-flex {
-    width: 100%;
-}
+
 }
 
 @media (max-width: 768px) { 
@@ -522,6 +523,9 @@ img#result_img {
 }
 
 @media (min-width: 320px) and (max-width: 480px) { 
+  .banner-heading div.d-flex {
+    width: 100%;
+}
   button.accordion-button{
     font-size: 50%;
 }
@@ -552,6 +556,7 @@ table#result_tb {
 table#result_tb td {
   font-size: 70%;
 }
+
 }
 @media (min-width: 480px) and (max-width: 575.98px) { 
   .banner-heading div.d-flex{
