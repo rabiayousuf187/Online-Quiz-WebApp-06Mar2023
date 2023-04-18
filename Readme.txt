@@ -2,6 +2,7 @@ I start developing QMS on 06 March 2023, based on HTML, CSS, Bootstrap 5 and JS 
 Dated: 16 April 2023, Sunday 1227 PM.
 Allhamdulliah, By the Grace of Almighty, 
 I have completed my Online Quiz WebApp(QWA).
+Compatible for All devices (Fully responsive)
 
 It has three Quizes (HTML5, CSS3, JS)
 Steps:
@@ -18,3 +19,15 @@ Must Give your feedback
 Thank for Connect
 Hava a Good Day☺!
 Best of Luck
+
+
+
+
+_____________________                 ____________
+________     ________ | |        | | |  ________  | |  \      | | | |  / /
+        |   |         | |        | | | |        | | | \ \     | | | | / /
+        |   |         | |________| | | |________| | | |\ \    | | | |/ /
+        |   |         | |________| | | |________| | | | \ \   | | | | /
+        |   |         | |        | | | |        | | | |  \ \  | | | |\ \
+        |   |         | |        | | | |        | | | |   \ \ | | | | \ \
+        |   |         | |        | | | |        | | | |    \ \| | | |  \ \
