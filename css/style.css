@@ -124,8 +124,9 @@ button.accordion-button {
     /* background: #2e2d66 !important; */
     background: #168599b3 !important;
     color: white !important;
-    font-size: 3vw;
+    /* font-size: 3vw; */
 }
+
 .ques-submit {
     float: right;
     margin: 5px 0px;
@@ -425,7 +426,52 @@ h1#percent_score {
 /* @media (min-width: 576px) { 
  
 } */
-@media (max-width: 575.98px) { 
+/* 
+320dp: Typical phone screen (240x320 ldpi, 320x480 mdpi, 480x800 hdpi, etc.)
+480dp: Large phone screen ~5" (480x800 mdpi)
+600dp: 7” tablet (600x1024 mdpi)
+720dp: 10” tablet (720x1280 mdpi, 800x1280 mdpi, etc.) */
+@media (max-width: 320px) { 
+  button.accordion-button{
+    font-size: 50%;
+}
+.accordion label{
+    font-size: 80%;
+    word-break: break-word;
+}
+  .btn-success{
+    width: 30%;
+      font-size: 110%;
+  }
+  .btn-warning {
+    width: 30%;
+    font-size: 110%;
+  }
+  span.score-text {
+    right: -10px;
+    width: 38px;
+    height: 23px;
+    background: #120b89;
+    padding: 3px 1.5%;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) { 
+  button.accordion-button{
+    font-size: 50%;
+}
+.accordion label{
+    font-size: 80%;
+    word-break: break-word;
+}
+span.score-text {
+  right: -10px;
+  width: 44px;
+  height: 23px;
+  background: #120b89;
+  padding: 3px 1.5%;
+}
+}
+@media (min-width: 480px) and (max-width: 575.98px) { 
   .banner-heading div.d-flex{
     width: 100%;
   }
@@ -443,21 +489,19 @@ h1#percent_score {
     width: 16vw;
     height: 16vw;
 }
-section.quiz_section {
+/* section.quiz_section {
   margin: 100px 5px;
-}
+} */
 button.accordion-button, .accordion  {
   font-size: 3vw;
 }
 span.score-text {
-  /* width: 150px; */
-  /* position: absolute; */
   right: -10px;
-  width: 30px;
+  width: 53px;
   height: 30px;
   background: #120b89;
-  padding: 6px 2px;
-  border-radius: 50%;
+  padding: 3px 1.7%;
+  /* border-radius: 50%; */
 }
 h2#result_heading {
   font-size: 7vw;
@@ -475,5 +519,25 @@ font-size: 6vw;
   .banner-heading p {
     padding: 0px 5vw;
 }
+span.score-text {
+  right: -10px;
+  width: 48px;
+  height: 26px;
+  background: #120b89;
+  padding: 3px 1.5%;
+}
+ } 
+  @media (max-width:768px) { 
+    section.quiz_section {
+      margin: 100px 5px;
+    }
+    /* span.score-text {
+      right: -10px;
+      width: 30px;
+      height: 30px;
+      background: #120b89;
+      padding: 6px 2px;
+      border-radius: 50%;
+    } */
  } 
  
