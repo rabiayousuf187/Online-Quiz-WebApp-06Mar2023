@@ -460,6 +460,14 @@ h1#percent_score {
     padding: 3px 1.5%;
     
   }
+
+  h2#result_heading, h3.result_heading {
+    font-size: 125%;
+  }
+  h6#inner_text {
+    margin-bottom: 0px;
+    font-size: 12px;
+}
 }
 @media (min-width: 320px) and (max-width: 480px) { 
   button.accordion-button{
