@@ -404,10 +404,10 @@ function Auth(){
       score = JSON.parse(localStorage.getItem("css_correct_answer"));
       console.log("final SCore == ", score);
       check_not_attempt();
-      not_attempt = 0;
+      // not_attempt = 0;
       
       percent_score = ( score / (css_ques.length * 10) ) * 100;
-      percent_score = 50;
+      // percent_score = 50;
 
       if ( not_attempt === 0 ){
         console.log("not_attempt  ====== 0    Inserted");
