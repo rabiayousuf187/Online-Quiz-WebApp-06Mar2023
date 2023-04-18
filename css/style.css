@@ -125,6 +125,7 @@ button.accordion-button {
     background: #168599b3 !important;
     color: white !important;
     /* font-size: 3vw; */
+    word-break: break-word;
 }
 
 .ques-submit {
@@ -143,14 +144,18 @@ button.accordion-button {
 }
 
 span.score-text {
-    /* width: 150px; */
-    position: absolute;
-    right: 90px;
-    z-index: 50;
-
+  position: absolute;
+  /* right: 90px; */
+  /* z-index: 50; */
+  /* background: #5ba9b7; */
+  border-top-right-radius: 10px;
 }
 .accordion-button {
     justify-content: flex-end;
+}
+.accordion-button::after {
+  visibility: hidden;
+  padding-left: 40px;
 }
 
 /* ******************************* HTML  Result DIV **************************/
@@ -441,14 +446,12 @@ h1#percent_score {
     font-size: 80%;
     word-break: break-word;
 }
-  .btn-success{
-    width: 30%;
-      font-size: 110%;
+  .btn-success, .btn-warning {
+    width: 20vw;
+    padding: 5% 5%;
+    font-size: 74%;
   }
-  .btn-warning {
-    width: 30%;
-    font-size: 110%;
-  }
+
   span.score-text {
     right: -10px;
     width: 38px;
@@ -468,7 +471,7 @@ h1#percent_score {
 }
 span.score-text {
   right: -10px;
-  width: 44px;
+  width: 48px;
   height: 23px;
   background: #120b89;
   padding: 3px 1.5%;
@@ -495,12 +498,12 @@ span.score-text {
 /* section.quiz_section {
   margin: 100px 5px;
 } */
-button.accordion-button, .accordion  {
+/* button.accordion-button, .accordion  {
   font-size: 3vw;
-}
+} */
 span.score-text {
   right: -10px;
-  width: 53px;
+  width: 60px;
   height: 30px;
   background: #120b89;
   padding: 3px 1.7%;
@@ -524,7 +527,7 @@ font-size: 6vw;
 }
 span.score-text {
   right: -10px;
-  width: 48px;
+  width: 64px;
   height: 26px;
   background: #120b89;
   padding: 3px 1.5%;
