@@ -523,6 +523,9 @@ img#result_img {
 }
 
 @media (min-width: 320px) and (max-width: 480px) { 
+  .banner-heading {
+    width: 80vw;
+  }
   .banner-heading div.d-flex {
     width: 100%;
 }
