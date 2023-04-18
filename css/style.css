@@ -479,6 +479,9 @@ h1#percent_score {
   tr.th_row2 {
     padding-left: 15px;
 }
+.banner-heading div.d-flex {
+    width: 100%;
+}
 }
 
 @media (max-width: 768px) { 
