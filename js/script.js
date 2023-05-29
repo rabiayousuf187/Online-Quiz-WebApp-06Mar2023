@@ -58,7 +58,7 @@ function start(username = inp_username.value){
     console.log("Start Quiz ====== ");
     username = username;
     console.log("Start username == ",username)
-    // if( username !== ""){
+    if( username !== ""){
         inp_username.style.border = "none";
         alert_danger.style.display = "none";
         quiz_data = {
@@ -69,5 +69,9 @@ function start(username = inp_username.value){
         console.log("quiz_data === ",quiz_data);
         localStorage.setItem("quiz_data",quiz_data)
         window.location.replace(current_url + "/pages/quiz.html");
-    
+    }
+    else{
+        console.log("Username is not enter.");
+        Unauth();
+    }
 }
